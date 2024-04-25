@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
@@ -12,7 +12,7 @@ import WelcomeHero from './components/WelcomeHero.tsx';
 import Contact from './Contact.tsx';
 import AboutBread from './AboutBread.tsx';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -34,7 +34,11 @@ const router = createHashRouter([
         path: "/aboutbread",
         element: <AboutBread />,
       },
-    ]
+    ],
+  },
+  {
+    path: "/404",
+    element: <ErrorPage />,
   }
 ], { basename: "/" });
 

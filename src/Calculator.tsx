@@ -73,6 +73,7 @@ function Calculator() {
               <input
                 type="text"
                 value={flour}
+                onFocus={() => { setWater('') }}
                 onChange={(e) => setFlour(e.target.value)}
                 className="input input-bordered w-full"
               />
@@ -82,6 +83,7 @@ function Calculator() {
               <input
                 type="text"
                 value={water}
+                onFocus={() => { setFlour('') }}
                 onChange={(e) => setWater(e.target.value)}
                 className="input input-bordered w-full"
               />
@@ -119,7 +121,7 @@ function Calculator() {
         </div>
       </form>
 
-      <div className="card w-96 bg-base-100 shadow-xl mt-8">
+      <div className="card w-fit sm:w-96 bg-base-100 shadow-xl mt-8">
         <div className="card-body">
           <h2 className="card-title">Recept</h2>
           <div className="grid grid-cols-2 gap-2 font-medium">

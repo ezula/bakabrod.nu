@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 function WelcomeHero() {
+  const navigate = useNavigate();
+
   const handleOnClick = () => {
-    window.location.href = '/calculator';
+    navigate('/calculator');
   }
   
   return (
