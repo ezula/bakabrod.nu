@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
@@ -12,7 +13,7 @@ import WelcomeHero from './components/WelcomeHero.tsx';
 import Contact from './Contact.tsx';
 import AboutBread from './AboutBread.tsx';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
     ]
   }
-]);
+], { basename: "/" });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
