@@ -11,6 +11,7 @@ import ErrorPage from './ErrorPage.tsx';
 import WelcomeHero from './components/WelcomeHero.tsx';
 import Contact from './Contact.tsx';
 import AboutBread from './AboutBread.tsx';
+import { initGA } from './ga-utils.ts';
 
 const router = createBrowserRouter([
   {

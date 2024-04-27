@@ -60,7 +60,7 @@ function Calculator() {
         <div className="form-control">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mt-4">
             <div className="grid col-span-2">
-              <label className="label">Hydration (%)</label>
+              <label className="label">Hydrering (%)</label>
               <input
                 type="text"
                 value={hydration}
