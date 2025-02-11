@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl" href="/">bakabröd.nu</a>
+        <a className="btn btn-ghost text-xl" href="/">
+          bakabröd.nu
+        </a>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
@@ -24,7 +26,7 @@ function Navbar() {
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

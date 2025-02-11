@@ -20,12 +20,13 @@ function Contact() {
           snabbt kan skriva in mängerna och få resten serverat.
         </p>
         <p>
-          Om du gillar denna sida, vill vara med eller om du har synpunkter på förbättringar så
-          får du gärna skicka ett mail till mig på <a href="mailto:svensmikael@gmail.com">svensmikael[a]gmail.com</a>.
+          Om du gillar denna sida, vill vara med eller om du har synpunkter på
+          förbättringar så får du gärna skicka ett mail till mig på{' '}
+          <a href="mailto:svensmikael@gmail.com">svensmikael[a]gmail.com</a>.
         </p>
       </article>
     </div>
-  );
+  )
 }
 
-export default Contact;
+export default Contact

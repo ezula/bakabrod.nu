@@ -1,41 +1,41 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from 'react'
 import sourdoughReduder, {
   SourdoughReducer,
   SourdoughState,
-} from "./reducer/sourdoughReducer";
+} from './reducer/sourdoughReducer'
 
 const initialState: SourdoughState = {
   finalWater: 0,
   sourdough: 0,
   salt: 0,
   finalFlour: 0,
-};
+}
 
 function Calculator() {
-  const [hydration, setHydration] = useState("72");
-  const [flour, setFlour] = useState("600");
-  const [water, setWater] = useState("");
-  const [saltPercentage, setSaltPercentage] = useState("2.2");
-  const [sourdoughPercentage, setSourdoughPercentage] = useState("10");
-  const [includeSourdough, setIncludeSourdough] = useState(false);
+  const [hydration, setHydration] = useState('72')
+  const [flour, setFlour] = useState('600')
+  const [water, setWater] = useState('')
+  const [saltPercentage, setSaltPercentage] = useState('2.2')
+  const [sourdoughPercentage, setSourdoughPercentage] = useState('10')
+  const [includeSourdough, setIncludeSourdough] = useState(false)
 
   const [state, dispatch] = useReducer<SourdoughReducer>(
     sourdoughReduder,
     initialState
-  );
+  )
 
-  const { finalWater, sourdough, salt, finalFlour } = state;
+  const { finalWater, sourdough, salt, finalFlour } = state
 
   useEffect(() => {
     dispatch({
-      type: "calc",
+      type: 'calc',
       flour: Number(flour),
       water: Number(water),
       hydration: Number(hydration),
       saltPercentage: Number(saltPercentage),
       sourdoughPercentage: Number(sourdoughPercentage),
       includeSourdough,
-    });
+    })
   }, [
     hydration,
     flour,
@@ -43,7 +43,7 @@ function Calculator() {
     saltPercentage,
     sourdoughPercentage,
     includeSourdough,
-  ]);
+  ])
 
   return (
     <div className="container max-w-5xl mx-auto p-4">
@@ -73,7 +73,9 @@ function Calculator() {
               <input
                 type="text"
                 value={flour}
-                onFocus={() => { setWater('') }}
+                onFocus={() => {
+                  setWater('')
+                }}
                 onChange={(e) => setFlour(e.target.value)}
                 className="input input-bordered w-full"
               />
@@ -83,7 +85,9 @@ function Calculator() {
               <input
                 type="text"
                 value={water}
-                onFocus={() => { setFlour('') }}
+                onFocus={() => {
+                  setFlour('')
+                }}
                 onChange={(e) => setWater(e.target.value)}
                 className="input input-bordered w-full"
               />
@@ -111,7 +115,12 @@ function Calculator() {
             </div>
             <div className="grid col-span-2">
               <label className="label cursor-pointer justify-start">
-                <input type="checkbox" className="checkbox" checked={includeSourdough} onChange={() => setIncludeSourdough((v) => !v)} />
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  checked={includeSourdough}
+                  onChange={() => setIncludeSourdough((v) => !v)}
+                />
                 <span className="label-text pl-4">
                   Räkna in surdegen i totala hydreringen
                 </span>
@@ -134,11 +143,13 @@ function Calculator() {
             <span>*Surdeg</span>
             <span className="text-accent">{sourdough} g</span>
           </div>
-          <span className="text-xs pt-8">* Surdegsgrunden består av lika delar mjöl och vatten.</span>
+          <span className="text-xs pt-8">
+            * Surdegsgrunden består av lika delar mjöl och vatten.
+          </span>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Calculator;
+export default Calculator

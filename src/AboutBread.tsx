@@ -1,4 +1,4 @@
-import BreadAbout from './content/BreadAbout.mdx';
+import BreadAbout from './content/BreadAbout.mdx'
 
 function AboutBread() {
   return (
@@ -6,9 +6,8 @@ function AboutBread() {
       <article className="prose lg:prose-xl">
         <BreadAbout />
       </article>
-      
     </div>
-  );
+  )
 }
 
-export default AboutBread;
+export default AboutBread

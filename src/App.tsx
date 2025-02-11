@@ -1,25 +1,25 @@
-import { Outlet } from "react-router-dom";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import CookieNotice from "./components/CookieNotice";
-import { createContext, useEffect, useState } from "react";
-import { initGA } from "./ga-utils";
+import { Outlet } from 'react-router-dom'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import CookieNotice from './components/CookieNotice'
+import { createContext, useEffect, useState } from 'react'
+import { initGA } from './ga-utils'
 
 export type CookieContextType = {
-  didAcceptCookie: boolean;
-  acceptCookie: boolean;
-  updateCookieConsent: (value: boolean) => void;
+  didAcceptCookie: boolean
+  acceptCookie: boolean
+  updateCookieConsent: (value: boolean) => void
 }
 
 export const CookieContext = createContext<CookieContextType>({
   didAcceptCookie: false,
   acceptCookie: false,
   updateCookieConsent: () => undefined,
-});
+})
 
 function App() {
-  const [ acceptCookie, setAcceptCookie ] = useState(false)
-  const [ didAcceptCookie, setDidAcceptCookie ] = useState(false)
+  const [acceptCookie, setAcceptCookie] = useState(false)
+  const [didAcceptCookie, setDidAcceptCookie] = useState(false)
 
   useEffect(() => {
     if (localStorage.getItem('acceptCookie')) {
@@ -37,7 +37,9 @@ function App() {
 
   return (
     <>
-      <CookieContext.Provider value={{ didAcceptCookie, acceptCookie, updateCookieConsent }}>
+      <CookieContext.Provider
+        value={{ didAcceptCookie, acceptCookie, updateCookieConsent }}
+      >
         <div className="container max-w-5xl mx-auto p-4">
           <Navbar />
         </div>
@@ -50,7 +52,7 @@ function App() {
         {!didAcceptCookie && <CookieNotice />}
       </CookieContext.Provider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

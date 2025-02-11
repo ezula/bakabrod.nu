@@ -1,15 +1,15 @@
-import { useContext } from "react";
-import { CookieContext, CookieContextType } from "../App";
+import { useContext } from 'react'
+import { CookieContext, CookieContextType } from '../App'
 
 function CookieNotice() {
-  const cookie = useContext<CookieContextType>(CookieContext);
+  const cookie = useContext<CookieContextType>(CookieContext)
 
   const handleDeny = () => {
-    cookie.updateCookieConsent(false);
-  };
+    cookie.updateCookieConsent(false)
+  }
   const handleAccept = () => {
-    cookie.updateCookieConsent(true);
-  };
+    cookie.updateCookieConsent(true)
+  }
 
   return (
     <div role="alert" className="alert fixed bottom-0 left-0 bg-secondary">
@@ -36,7 +36,7 @@ function CookieNotice() {
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default CookieNotice;
+export default CookieNotice

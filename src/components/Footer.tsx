@@ -4,18 +4,12 @@ function Footer() {
       <footer className="footer p-10 bg-neutral text-neutral-content">
         <aside>
           <h2 className="text-lg">bakabröd.nu</h2>
-          <p>
-            Svens Tech AB
-            <br />
-            Org. nr: 559295-3383
-            <br />
-            Bolagets säte: Skultuna
-          </p>
+          <p>Bakad med glädje av svz-dev</p>
         </aside>
         <nav>
           <h6 className="footer-title">Sociala medier</h6>
           <div className="grid grid-flow-col gap-4">
-            <a href="https://www.linkedin.com/company/svens-tech-ab">
+            <a href="https://www.linkedin.com/in/mikael-svens-ba20b943/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#0072B1"
@@ -30,7 +24,7 @@ function Footer() {
         </nav>
       </footer>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
