@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('acceptCookie')) {
       setDidAcceptCookie(true)
-      initGA('UA-155449594-1')
+      initGA('GA-DH4TD2F7BDVI')
     }
   }, [])
 
@@ -21,7 +21,7 @@ function App() {
     localStorage.setItem('acceptCookie', value.toString())
     setAcceptCookie(value)
     setDidAcceptCookie(true)
-    initGA('UA-155449594-1')
+    initGA('GA-DH4TD2F7BDVI')
   }
 
   return (
