@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <header className="navbar bg-base-100">
       <div className="flex-1">
-        <img className="w-12 h-12" alt="logo" src="logo.svg" />
+        <img className="w-12 h-12" alt="logo" src="/logo.svg" />
         <a className="btn btn-ghost text-xl" href="/">
           bakabröd.nu
         </a>
