@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from 'react'
 import sourdoughReduder, {
   SourdoughReducer,
   SourdoughState,
-} from './reducer/sourdoughReducer'
+} from '../reducer/sourdoughReducer'
 
 const initialState: SourdoughState = {
   finalWater: 0,
@@ -46,7 +46,7 @@ function Calculator() {
   ])
 
   return (
-    <div className="container max-w-5xl mx-auto p-4">
+    <main className="container max-w-5xl mx-auto p-4">
       <div className="prose lg:prose-xl">
         <h1 className="text-secondary">Surdegskalkylatorn</h1>
         <p>
@@ -148,7 +148,7 @@ function Calculator() {
           </span>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

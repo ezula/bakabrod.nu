@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import Calculator from './Calculator.tsx'
 import ErrorPage from './ErrorPage.tsx'
 import WelcomeHero from './components/WelcomeHero.tsx'
-import Contact from './Contact.tsx'
-import AboutBread from './AboutBread.tsx'
+import Calculator from './pages/Calculator.tsx'
+import Contact from './pages/Contact.tsx'
+import AboutBread from './pages/AboutBread.tsx'
 
 const router = createBrowserRouter(
   [

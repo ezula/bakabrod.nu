@@ -1,4 +1,4 @@
-import BreadAbout from './content/BreadAbout.mdx'
+import BreadAbout from '../content/BreadAbout.mdx'
 
 function AboutBread() {
   return (

@@ -2,20 +2,9 @@ import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import CookieNotice from './components/CookieNotice'
-import { createContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { initGA } from './ga-utils'
-
-export type CookieContextType = {
-  didAcceptCookie: boolean
-  acceptCookie: boolean
-  updateCookieConsent: (value: boolean) => void
-}
-
-export const CookieContext = createContext<CookieContextType>({
-  didAcceptCookie: false,
-  acceptCookie: false,
-  updateCookieConsent: () => undefined,
-})
+import { CookieContext } from './context/CookieContext'
 
 function App() {
   const [acceptCookie, setAcceptCookie] = useState(false)
@@ -36,22 +25,20 @@ function App() {
   }
 
   return (
-    <>
-      <CookieContext.Provider
-        value={{ didAcceptCookie, acceptCookie, updateCookieConsent }}
-      >
-        <div className="container max-w-5xl mx-auto p-4">
-          <Navbar />
-        </div>
+    <CookieContext.Provider
+      value={{ didAcceptCookie, acceptCookie, updateCookieConsent }}
+    >
+      <div className="container max-w-5xl mx-auto">
+        <Navbar />
+      </div>
 
-        <div className="flex flex-col min-h-screen">
-          <Outlet />
-        </div>
+      <div className="flex flex-col min-h-screen">
+        <Outlet />
+      </div>
 
-        <Footer />
-        {!didAcceptCookie && <CookieNotice />}
-      </CookieContext.Provider>
-    </>
+      <Footer />
+      {!didAcceptCookie && <CookieNotice />}
+    </CookieContext.Provider>
   )
 }
 

@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-100">
+    <header className="navbar bg-base-100">
       <div className="flex-1">
+        <img className="w-12 h-12" alt="logo" src="logo.svg" />
         <a className="btn btn-ghost text-xl" href="/">
           bakabröd.nu
         </a>
       </div>
-      <div className="flex-none">
+      <nav className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link to={'contact'}>Kontakt</Link>
@@ -24,8 +25,8 @@ function Navbar() {
             </details>
           </li>
         </ul>
-      </div>
-    </div>
+      </nav>
+    </header>
   )
 }
 

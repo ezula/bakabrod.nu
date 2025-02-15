@@ -12,7 +12,7 @@ function WelcomeHero() {
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">
-            Välkommen till nya{' '}
+            Välkommen till{' '}
             <div className="rotate-6 text-secondary">bakabröd.nu</div>
           </h1>
           <p className="py-12">
