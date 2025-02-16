@@ -1,9 +1,18 @@
 import { useNavigate } from 'react-router-dom'
+import ReactGA from 'react-ga4'
 
 function WelcomeHero() {
   const navigate = useNavigate()
 
   const handleOnClick = () => {
+    ReactGA.event({
+      category: 'WelcomeHero',
+      action: 'click-to-calculator',
+      // label: "your label", // optional
+      // value: 99, // optional, must be a number
+      nonInteraction: false, // optional, true/false
+      transport: 'xhr', // optional, beacon/xhr/image
+    })
     navigate('/calculator')
   }
 
