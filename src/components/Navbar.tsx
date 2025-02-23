@@ -51,9 +51,9 @@ function Navbar() {
 
       {/* Desktop menu - hidden on mobile */}
       <nav className="flex-none hidden md:block">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link to={'contact'}>Kontakt</Link>
+        <ul className="menu menu-horizontal px-1 gap-2">
+          <li className="outline-dotted rounded-md outline-primary">
+            <Link to={'guides'}>Guider</Link>
           </li>
           <li>
             <details ref={menuRef}>
@@ -65,16 +65,19 @@ function Navbar() {
               </ul>
             </details>
           </li>
+          <li>
+            <Link to={'contact'}>Kontakt</Link>
+          </li>
         </ul>
       </nav>
 
       {/* Mobile menu - only visible when hamburger is clicked */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-[64px] left-0 right-0 bg-base-100 z-50">
-          <ul className="menu menu-vertical px-1 py-2">
-            <li>
-              <Link to={'contact'} onClick={() => setIsMenuOpen(false)}>
-                Kontakt
+          <ul className="menu menu-vertical px-1 py-2 gap-2">
+            <li className="outline-dotted rounded-md outline-primary">
+              <Link to={'guides'} onClick={() => setIsMenuOpen(false)}>
+                Guider
               </Link>
             </li>
             <li>
@@ -91,6 +94,11 @@ function Navbar() {
                   </li>
                 </ul>
               </details>
+            </li>
+            <li>
+              <Link to={'contact'} onClick={() => setIsMenuOpen(false)}>
+                Kontakt
+              </Link>
             </li>
           </ul>
         </div>

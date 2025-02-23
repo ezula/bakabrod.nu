@@ -8,6 +8,7 @@ import WelcomeHero from './components/WelcomeHero.tsx'
 import Calculator from './pages/Calculator.tsx'
 import Contact from './pages/Contact.tsx'
 import AboutBread from './pages/AboutBread.tsx'
+import Guides from './pages/Guides.tsx'
 
 const router = createBrowserRouter(
   [
@@ -31,6 +32,10 @@ const router = createBrowserRouter(
         {
           path: '/aboutbread',
           element: <AboutBread />,
+        },
+        {
+          path: '/guides',
+          element: <Guides />,
         },
       ],
     },
