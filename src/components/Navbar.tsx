@@ -1,18 +1,30 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 function Navbar() {
+  const menuRef = useRef<HTMLDetailsElement>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const closeMenu = () => {
+    if (menuRef.current) {
+      menuRef.current.removeAttribute('open')
+    }
+  }
 
   return (
     <header className="navbar bg-base-100">
       <div className="flex-1">
-        <Link to={'/'}>
-          <img className="w-12 h-12" alt="logo" src="/logo-bread.png" />
+        <Link
+          className="flex flex-row items-center pr-2 rounded-md hover:bg-black/10"
+          to="/"
+        >
+          <img
+            className="w-12 h-12 mr-2"
+            alt="bakabröd.nu logotype"
+            src="/logo-bread.png"
+          />
+          <span className="text-xl font-bold">bakabröd.nu</span>
         </Link>
-        <a className="btn btn-ghost text-xl" href="/">
-          bakabröd.nu
-        </a>
       </div>
 
       {/* Hamburger button - only visible on mobile */}
@@ -44,10 +56,10 @@ function Navbar() {
             <Link to={'contact'}>Kontakt</Link>
           </li>
           <li>
-            <details>
+            <details ref={menuRef}>
               <summary>Om bröd</summary>
               <ul className="p-2 bg-base-100 rounded-t-none">
-                <li>
+                <li onClick={closeMenu}>
                   <Link to={'aboutbread'}>Fakta om bröd</Link>
                 </li>
               </ul>
@@ -70,7 +82,10 @@ function Navbar() {
                 <summary>Om bröd</summary>
                 <ul className="p-2 bg-base-100">
                   <li>
-                    <Link to={'aboutbread'} onClick={() => setIsMenuOpen(false)}>
+                    <Link
+                      to={'aboutbread'}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
                       Fakta om bröd
                     </Link>
                   </li>

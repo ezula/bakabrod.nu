@@ -1,7 +1,7 @@
 function Contact() {
   return (
-    <div className="container max-w-5xl mx-auto p-4">
-      <article className="prose lg:prose-xl">
+    <main className="container max-w-5xl mx-auto p-4">
+      <article className="prose prose-sm md:prose-lg lg:prose-xl">
         <h1 className="text-secondary">Om sudegskalkylatorn</h1>
         <p>
           Surdegskalkylatorn är ett litet projekt som drivs av en glad
@@ -25,7 +25,7 @@ function Contact() {
           <a href="mailto:svensmikael@gmail.com">svensmikael[a]gmail.com</a>.
         </p>
       </article>
-    </div>
+    </main>
   )
 }
 
