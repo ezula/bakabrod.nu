@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import ReactGA from 'react-ga4'
 import { Helmet } from 'react-helmet'
 
-function WelcomeHero() {
+function Home() {
   const navigate = useNavigate()
 
   const handleOnClick = () => {
@@ -21,7 +21,7 @@ function WelcomeHero() {
     <>
       <Helmet>
         <title>bakabröd.nu - Hem</title>
-        <link rel="canonical" href="https://bakabröd.nu/calculator" />
+        <link rel="canonical" href="https://bakabröd.nu" />
         <meta
           name="description"
           content="En kalkylator för att beräkna mängder när du bakar bröd med surdeg."
@@ -49,4 +49,4 @@ function WelcomeHero() {
   )
 }
 
-export default WelcomeHero
+export default Home

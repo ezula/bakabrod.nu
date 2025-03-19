@@ -4,11 +4,11 @@ import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import ErrorPage from './ErrorPage.tsx'
-import WelcomeHero from './components/WelcomeHero.tsx'
 import Calculator from './pages/Calculator.tsx'
 import Contact from './pages/Contact.tsx'
 import AboutBread from './pages/AboutBread.tsx'
 import Guides from './pages/Guides.tsx'
+import Home from './pages/Home.tsx'
 
 const router = createBrowserRouter(
   [
@@ -19,7 +19,7 @@ const router = createBrowserRouter(
       children: [
         {
           path: '/',
-          element: <WelcomeHero />,
+          element: <Home />,
         },
         {
           path: '/calculator',
@@ -34,7 +34,7 @@ const router = createBrowserRouter(
           element: <AboutBread />,
         },
         {
-          path: '/guides',
+          path: '/guides/*',
           element: <Guides />,
         },
       ],
