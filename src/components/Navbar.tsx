@@ -52,6 +52,15 @@ function Navbar() {
       {/* Desktop menu - hidden on mobile */}
       <nav className="flex-none hidden md:block">
         <ul className="menu menu-horizontal px-1 gap-2">
+          <li>
+            <a
+              href="https://surdegskurs.xn--bakabrd-f1a.nu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Surdegskurs ⭐
+            </a>
+          </li>
           <li className="outline-dotted rounded-md outline-primary">
             <Link to={'guides'}>Guider</Link>
           </li>
@@ -75,6 +84,16 @@ function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden absolute top-[64px] left-0 right-0 bg-base-100 z-50">
           <ul className="menu menu-vertical px-1 py-2 gap-2">
+            <li>
+              <a
+                href="https://surdegskurs.xn--bakabrd-f1a.nu"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Surdegskurs ⭐
+              </a>
+            </li>
             <li className="outline-dotted rounded-md outline-primary">
               <Link to={'guides'} onClick={() => setIsMenuOpen(false)}>
                 Guider
