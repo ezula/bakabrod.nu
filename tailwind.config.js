@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {}
+    extend: {},
   },
   daisyui: {
-    themes: ["retro"],
+    themes: ['retro'],
   },
-  plugins: [require("@tailwindcss/typography"), require('daisyui')],
-}
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+};

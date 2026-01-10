@@ -4,40 +4,74 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-bakabrod.nu is a Swedish sourdough bread baking website built with React, TypeScript, and Vite. It features a sourdough calculator, baking guides (MDX content), and informational pages about bread.
+bakabrod.nu is a Swedish sourdough bread baking website built with Next.js 15 and deployed on Cloudflare Workers via OpenNext. It features a sourdough calculator, baking guides, and informational pages about bread.
 
 ## Commands
 
 ```bash
-bun install     # Install dependencies
-bun dev         # Start development server
-bun run build   # TypeScript check + Vite production build
-bun run lint    # ESLint with zero warnings tolerance
-bun run preview # Preview production build
+bun install      # Install dependencies
+bun dev          # Start Next.js development server (with Turbopack)
+bun run build    # Next.js production build
+bun run lint     # Biome linter
+bun run lint:fix # Biome auto-fix
+bun run preview  # Build and preview with OpenNext/Cloudflare
+bun run deploy   # Build and deploy to Cloudflare Workers
 ```
 
 ## Tech Stack
 
-- **Framework**: React 18 with TypeScript
-- **Bundler**: Vite with MDX support (`@mdx-js/rollup`)
+- **Framework**: Next.js 15 (App Router) with React 19 and TypeScript
+- **Deployment**: Cloudflare Workers via `@opennextjs/cloudflare`
 - **Styling**: Tailwind CSS + DaisyUI (retro theme) + @tailwindcss/typography
-- **Routing**: react-router-dom v7 (browser router)
+- **Linting**: Biome
 - **Analytics**: Google Analytics via react-ga4 (cookie consent required)
 
 ## Architecture
 
-- `src/main.tsx` - Router configuration with all routes defined
-- `src/App.tsx` - Root layout with Navbar, Footer, cookie consent context
-- `src/pages/` - Page components (Home, Calculator, Guides, Contact, AboutBread)
-- `src/pages/guide-content/` - MDX guide articles
-- `src/components/` - Shared UI components (Navbar, Footer, CookieNotice)
-- `src/context/` - React contexts (CookieContext for GDPR consent)
-- `src/reducer/` - State reducers (sourdoughReducer for calculator)
-- `src/content/` - Additional MDX content
+- `app/` - Next.js App Router pages with file-based routing
+  - `app/layout.tsx` - Root layout with Navbar, Footer, Analytics provider
+  - `app/page.tsx` - Homepage
+  - `app/calculator/` - Sourdough calculator
+  - `app/recept/` - Recipe listing and individual recipe pages
+  - `app/guides/` - Guide pages with shared layout
+  - `app/contact/`, `app/aboutbread/` - Static content pages
+  - `app/sitemap.ts` - Dynamic sitemap generation
+  - `app/robots.ts` - Robots.txt generation
+- `components/` - React components (client and server)
+- `lib/` - Utility functions and data
+  - `lib/sourdoughReducer.ts` - Calculator state management
+  - `lib/recipes/` - Recipe data and types
+- `public/` - Static assets
 
 ## Key Patterns
 
-- Cookie consent is managed via `CookieContext` and stored in localStorage
-- GA is only initialized after cookie consent is given
-- MDX files are used for guide content and can be imported as React components
-- The Guides page uses wildcard routing (`/guides/*`) for nested guide routes
+- SEO: Each page exports `metadata` for title, description, Open Graph
+- JSON-LD structured data added via `<script type="application/ld+json">`
+- Cookie consent managed via `AnalyticsProvider` context, stored in localStorage
+- GA only initialized after user consent
+- Client components marked with `'use client'` directive
+
+## Cloudflare Configuration
+
+- `wrangler.jsonc` - Cloudflare Workers config
+- `open-next.config.ts` - OpenNext adapter config
+- Requires `nodejs_compat` compatibility flag
+
+## Adding Recipes
+
+Recipes are stored as TypeScript data in `lib/recipes/`. To add a new recipe:
+
+1. Create a new file in `lib/recipes/`, e.g., `focaccia.ts`
+2. Export a `Recipe` object (see `klassiskt-surdegsbrod.ts` for example)
+3. Import and add to the `recipes` array in `lib/recipes/index.ts`
+
+Recipe schema (JSON-LD) is automatically generated for Google rich snippets. Required fields:
+- `slug` - URL-friendly identifier
+- `name`, `description` - Title and summary
+- `prepTime`, `cookTime` - In minutes
+- `yields` - e.g., "1 stort bröd"
+- `difficulty` - 'lätt' | 'medel' | 'avancerad'
+- `ingredients` - Array of { amount, unit, name }
+- `steps` - Array of { title?, description, duration? }
+
+Optional: `image`, `restTime`, `tips`, `hydration`, `saltPercentage`, `starterPercentage`
