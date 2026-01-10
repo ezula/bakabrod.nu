@@ -1,26 +1,29 @@
-import { useContext, useState } from 'react'
-import { CookieContext, CookieContextType } from '../context/CookieContext'
+import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Dialog,
   DialogBackdrop,
   DialogPanel,
   DialogTitle,
-} from '@headlessui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCookieBite } from '@fortawesome/free-solid-svg-icons'
+} from '@headlessui/react';
+import { useContext, useState } from 'react';
+import {
+  CookieContext,
+  type CookieContextType,
+} from '../context/CookieContext';
 
 function CookieNotice() {
-  const [open, setOpen] = useState(true)
-  const cookie = useContext<CookieContextType>(CookieContext)
+  const [open, setOpen] = useState(true);
+  const cookie = useContext<CookieContextType>(CookieContext);
 
   const handleDeny = () => {
-    cookie.updateCookieConsent(false)
-    setOpen(false)
-  }
+    cookie.updateCookieConsent(false);
+    setOpen(false);
+  };
   const handleAccept = () => {
-    cookie.updateCookieConsent(true)
-    setOpen(false)
-  }
+    cookie.updateCookieConsent(true);
+    setOpen(false);
+  };
 
   return (
     <Dialog
@@ -85,7 +88,7 @@ function CookieNotice() {
         </div>
       </div>
     </Dialog>
-  )
+  );
 }
 
-export default CookieNotice
+export default CookieNotice;

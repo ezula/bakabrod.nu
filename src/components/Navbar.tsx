@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom'
-import { useRef, useState } from 'react'
+import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const menuRef = useRef<HTMLDetailsElement>(null)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDetailsElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => {
     if (menuRef.current) {
-      menuRef.current.removeAttribute('open')
+      menuRef.current.removeAttribute('open');
     }
-  }
+  };
 
   return (
     <header className="navbar bg-base-100">
@@ -30,21 +30,24 @@ function Navbar() {
       {/* Hamburger button - only visible on mobile */}
       <div className="flex-none md:hidden">
         <button
+          type="button"
           className="btn btn-square btn-ghost"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Öppna meny"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             className="inline-block w-5 h-5 stroke-current"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+            />
           </svg>
         </button>
       </div>
@@ -68,7 +71,12 @@ function Navbar() {
             <details ref={menuRef}>
               <summary>Om bröd</summary>
               <ul className="p-2 bg-base-100 rounded-t-none">
-                <li onClick={closeMenu}>
+                <li
+                  onClick={closeMenu}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') closeMenu();
+                  }}
+                >
                   <Link to={'aboutbread'}>Fakta om bröd</Link>
                 </li>
               </ul>
@@ -123,7 +131,7 @@ function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

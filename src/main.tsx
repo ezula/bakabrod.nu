@@ -1,14 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
-import ErrorPage from './ErrorPage.tsx'
-import Calculator from './pages/Calculator.tsx'
-import Contact from './pages/Contact.tsx'
-import AboutBread from './pages/AboutBread.tsx'
-import Guides from './pages/Guides.tsx'
-import Home from './pages/Home.tsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App.tsx';
+import './index.css';
+import ErrorPage from './ErrorPage.tsx';
+import AboutBread from './pages/AboutBread.tsx';
+import Calculator from './pages/Calculator.tsx';
+import Contact from './pages/Contact.tsx';
+import Guides from './pages/Guides.tsx';
+import Home from './pages/Home.tsx';
 
 const router = createBrowserRouter(
   [
@@ -44,11 +44,14 @@ const router = createBrowserRouter(
       element: <ErrorPage />,
     },
   ],
-  { basename: '/' }
-)
+  { basename: '/' },
+);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-)
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>,
+  );
+}

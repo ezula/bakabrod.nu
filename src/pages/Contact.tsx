@@ -1,12 +1,40 @@
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
 
 function Contact() {
   return (
     <>
       <Helmet>
-        <title>bakabröd.nu - Kontakt</title>
+        <title>Om surdegskalkylatorn och kontakt | bakabröd.nu</title>
         <link rel="canonical" href="https://bakabröd.nu/contact" />
-        <meta name="description" content="Kontaktinformation" />
+        <meta
+          name="description"
+          content="Lär känna personen bakom surdegskalkylatorn på bakabröd.nu. Kontakta oss med frågor eller förslag på förbättringar."
+        />
+        <meta property="og:title" content="Om surdegskalkylatorn och kontakt" />
+        <meta
+          property="og:description"
+          content="Lär känna personen bakom surdegskalkylatorn på bakabröd.nu. Kontakta oss med frågor eller förslag."
+        />
+        <meta
+          property="og:image"
+          content="https://xn--bakabrd-f1a.nu/logo-bread.png"
+        />
+        <meta property="og:url" content="https://xn--bakabrd-f1a.nu/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="sv_SE" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Om surdegskalkylatorn och kontakt"
+        />
+        <meta
+          name="twitter:description"
+          content="Lär känna personen bakom surdegskalkylatorn på bakabröd.nu."
+        />
+        <meta
+          name="twitter:image"
+          content="https://xn--bakabrd-f1a.nu/logo-bread.png"
+        />
       </Helmet>
       <main className="container max-w-5xl mx-auto p-4">
         <article className="prose prose-sm md:prose-lg lg:prose-xl">
@@ -35,7 +63,7 @@ function Contact() {
         </article>
       </main>
     </>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

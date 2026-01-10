@@ -1,47 +1,47 @@
-import { useReducer, useState } from 'react'
-import { HiOutlineSwitchHorizontal } from 'react-icons/hi'
-import ReactGA from 'react-ga4'
+import { useReducer, useState } from 'react';
+import ReactGA from 'react-ga4';
+import { Helmet } from 'react-helmet';
+import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
 import sourdoughReduder, {
-  SourdoughReducer,
-  SourdoughState,
-} from '../reducer/sourdoughReducer'
-import { Helmet } from 'react-helmet'
+  type SourdoughReducer,
+  type SourdoughState,
+} from '../reducer/sourdoughReducer';
 
 const initialState: SourdoughState = {
   finalWater: 0,
   sourdough: 0,
   salt: 0,
   finalFlour: 0,
-}
+};
 
 function Calculator() {
-  const [hydration, setHydration] = useState('72')
-  const [flour, setFlour] = useState('600')
-  const [water, setWater] = useState('')
-  const [saltPercentage, setSaltPercentage] = useState('2.2')
-  const [sourdoughPercentage, setSourdoughPercentage] = useState('10')
-  const [includeSourdough, setIncludeSourdough] = useState(false)
-  const [waterOrFlour, setWaterOrFlour] = useState<'WATER' | 'FLOUR'>('FLOUR')
+  const [hydration, setHydration] = useState('72');
+  const [flour, setFlour] = useState('600');
+  const [water, setWater] = useState('');
+  const [saltPercentage, setSaltPercentage] = useState('2.2');
+  const [sourdoughPercentage, setSourdoughPercentage] = useState('10');
+  const [includeSourdough, setIncludeSourdough] = useState(false);
+  const [waterOrFlour, setWaterOrFlour] = useState<'WATER' | 'FLOUR'>('FLOUR');
 
   const [state, dispatch] = useReducer<SourdoughReducer>(
     sourdoughReduder,
-    initialState
-  )
+    initialState,
+  );
 
-  const { finalWater, sourdough, salt, finalFlour } = state
+  const { finalWater, sourdough, salt, finalFlour } = state;
 
   const handleToggleWaterFlour = (
-    event: React.MouseEvent<HTMLButtonElement>
+    event: React.MouseEvent<HTMLButtonElement>,
   ) => {
-    event.preventDefault()
+    event.preventDefault();
     if (waterOrFlour === 'FLOUR') {
-      setWaterOrFlour('WATER')
-      setWater(state.finalWater?.toString())
-      setFlour('')
+      setWaterOrFlour('WATER');
+      setWater(state.finalWater?.toString());
+      setFlour('');
     } else {
-      setWaterOrFlour('FLOUR')
-      setFlour(state.finalFlour?.toString())
-      setWater('')
+      setWaterOrFlour('FLOUR');
+      setFlour(state.finalFlour?.toString());
+      setWater('');
     }
 
     ReactGA.event({
@@ -49,11 +49,11 @@ function Calculator() {
       action: 'toggle-water-flour-button-press',
       nonInteraction: false, // optional, true/false
       transport: 'xhr', // optional, beacon/xhr/image
-    })
-  }
+    });
+  };
 
   const handleCalculate = (event: React.MouseEvent<HTMLInputElement>) => {
-    event.preventDefault()
+    event.preventDefault();
     dispatch({
       type: 'calc',
       flour: Number(flour),
@@ -62,25 +62,77 @@ function Calculator() {
       saltPercentage: Number(saltPercentage),
       sourdoughPercentage: Number(sourdoughPercentage),
       includeSourdough,
-    })
+    });
 
     ReactGA.event({
       category: 'Calculator',
       action: 'calculate-button-press',
       nonInteraction: false, // optional, true/false
       transport: 'xhr', // optional, beacon/xhr/image
-    })
-  }
+    });
+  };
 
   return (
     <>
       <Helmet>
-        <title>bakabröd.nu - Surdegskalkylatorn</title>
+        <title>
+          Surdegskalkylator - Beräkna mjöl, vatten och hydreringsgrad |
+          bakabröd.nu
+        </title>
         <link rel="canonical" href="https://bakabröd.nu/calculator" />
         <meta
           name="description"
-          content="En kalkylator för att beräkna mängder när du bakar bröd med surdeg."
+          content="Gratis surdegskalkylator - räkna ut hydreringsgrad, mjöl, vatten och salt för ditt surdegsbröd. Anpassa mängder efter antal bröd du vill baka."
         />
+        <meta
+          property="og:title"
+          content="Surdegskalkylator - Beräkna mjöl, vatten och hydreringsgrad"
+        />
+        <meta
+          property="og:description"
+          content="Gratis surdegskalkylator - räkna ut hydreringsgrad, mjöl, vatten och salt för ditt surdegsbröd."
+        />
+        <meta
+          property="og:image"
+          content="https://xn--bakabrd-f1a.nu/logo-bread.png"
+        />
+        <meta
+          property="og:url"
+          content="https://xn--bakabrd-f1a.nu/calculator"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="sv_SE" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Surdegskalkylator - Beräkna mjöl, vatten och hydreringsgrad"
+        />
+        <meta
+          name="twitter:description"
+          content="Gratis surdegskalkylator - räkna ut hydreringsgrad, mjöl, vatten och salt för ditt surdegsbröd."
+        />
+        <meta
+          name="twitter:image"
+          content="https://xn--bakabrd-f1a.nu/logo-bread.png"
+        />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: 'Surdegskalkylatorn',
+            url: 'https://xn--bakabrd-f1a.nu/calculator',
+            description:
+              'Gratis surdegskalkylator för att beräkna mjöl, vatten, salt och hydreringsgrad för surdegsbröd',
+            applicationCategory: 'UtilityApplication',
+            operatingSystem: 'All',
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'SEK',
+            },
+            inLanguage: 'sv-SE',
+          })}
+        </script>
       </Helmet>
       <main className="container max-w-5xl mx-auto p-4">
         <div className="prose prose-sm md:prose-lg lg:prose-xl">
@@ -100,8 +152,11 @@ function Calculator() {
             <div className="form-control">
               <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mt-4">
                 <div className="grid col-span-2">
-                  <label className="label">Hydrering (%)</label>
+                  <label className="label" htmlFor="hydration">
+                    Hydrering (%)
+                  </label>
                   <input
+                    id="hydration"
                     type="text"
                     value={hydration}
                     onChange={(e) => setHydration(e.target.value)}
@@ -109,16 +164,17 @@ function Calculator() {
                   />
                 </div>
                 <div className="grid">
-                  <label className="label">
+                  <label className="label" htmlFor="flour-water">
                     {waterOrFlour === 'FLOUR' ? 'Mjöl' : 'Vatten'} (g)
                   </label>
                   <input
+                    id="flour-water"
                     type="text"
                     value={waterOrFlour === 'FLOUR' ? flour : water}
                     onChange={(e) => {
                       waterOrFlour === 'FLOUR'
                         ? setFlour(e.target.value)
-                        : setWater(e.target.value)
+                        : setWater(e.target.value);
                     }}
                     className="input input-bordered w-full"
                   />
@@ -126,6 +182,7 @@ function Calculator() {
                 <div className="grid">
                   <div className="flex items-end">
                     <button
+                      type="button"
                       className="flex flex-row gap-4 items-center h-[48px] btn"
                       onClick={handleToggleWaterFlour}
                     >
@@ -137,8 +194,11 @@ function Calculator() {
                   </div>
                 </div>
                 <div className="grid">
-                  <label className="label">Salt ({saltPercentage} %)</label>
+                  <label className="label" htmlFor="salt">
+                    Salt ({saltPercentage} %)
+                  </label>
                   <input
+                    id="salt"
                     type="range"
                     min="0"
                     max="10"
@@ -149,10 +209,11 @@ function Calculator() {
                   />
                 </div>
                 <div className="grid">
-                  <label className="label">
+                  <label className="label" htmlFor="sourdough">
                     Surdeg ({sourdoughPercentage} %)
                   </label>
                   <input
+                    id="sourdough"
                     type="range"
                     value={sourdoughPercentage}
                     onChange={(e) => setSourdoughPercentage(e.target.value)}
@@ -205,7 +266,7 @@ function Calculator() {
         </section>
       </main>
     </>
-  )
+  );
 }
 
-export default Calculator
+export default Calculator;

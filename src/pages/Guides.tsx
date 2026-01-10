@@ -1,9 +1,9 @@
-import { Helmet } from 'react-helmet'
-import { NavLink, Outlet, Route, Routes } from 'react-router-dom'
-import StartYourOwnSourdugh from './guide-content/StartYourOwnSourdough.mdx'
-import BakeWithWholeGrain from './guide-content/BakeWithWholeGrain.mdx'
-import TipsAndTricks from './guide-content/TipsAndTricks.mdx'
-import { IoMdArrowDropdown } from 'react-icons/io'
+import { Helmet } from 'react-helmet';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { NavLink, Outlet, Route, Routes } from 'react-router-dom';
+import BakeWithWholeGrain from './guide-content/BakeWithWholeGrain.mdx';
+import StartYourOwnSourdugh from './guide-content/StartYourOwnSourdough.mdx';
+import TipsAndTricks from './guide-content/TipsAndTricks.mdx';
 
 function Layout() {
   return (
@@ -33,14 +33,11 @@ function Layout() {
         </nav>
         <nav className="flex md:hidden">
           <div className="dropdown dropdown-bottom">
-            <div tabIndex={0} role="button" className="btn m-1">
+            <button type="button" className="btn m-1">
               Innehåll
               <IoMdArrowDropdown />
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
-            >
+            </button>
+            <ul className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
               <li>
                 <NavLink to="/guides/starta-egen">
                   Starta din egen surdegsgrund
@@ -69,19 +66,63 @@ function Layout() {
         </section>
       </div>
     </main>
-  )
+  );
 }
 
 function Guides() {
   return (
     <>
       <Helmet>
-        <title>bakabröd.nu - Guider</title>
+        <title>Brödguider - Lär dig baka surdegsbröd | bakabröd.nu</title>
         <link rel="canonical" href="https://bakabröd.nu/guides" />
         <meta
           name="description"
-          content="Guider och tutorials om brödbakning"
+          content="Lär dig baka surdegsbröd: starta egen surdegsgrund, baka med fullkorn och få tips för perfekt bröd varje gång. Guider för nybörjare och erfarna."
         />
+        <meta
+          property="og:title"
+          content="Brödguider - Lär dig baka surdegsbröd"
+        />
+        <meta
+          property="og:description"
+          content="Lär dig baka surdegsbröd: starta egen surdegsgrund, baka med fullkorn och få tips för perfekt bröd varje gång."
+        />
+        <meta
+          property="og:image"
+          content="https://xn--bakabrd-f1a.nu/logo-bread.png"
+        />
+        <meta property="og:url" content="https://xn--bakabrd-f1a.nu/guides" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="sv_SE" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="Brödguider - Lär dig baka surdegsbröd"
+        />
+        <meta
+          name="twitter:description"
+          content="Lär dig baka surdegsbröd: starta egen surdegsgrund, baka med fullkorn och få tips för perfekt bröd."
+        />
+        <meta
+          name="twitter:image"
+          content="https://xn--bakabrd-f1a.nu/logo-bread.png"
+        />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Brödguider',
+            url: 'https://xn--bakabrd-f1a.nu/guides',
+            description:
+              'Guider för att lära sig baka surdegsbröd: starta surdegsgrund, baka med fullkorn och tips för perfekt bröd',
+            inLanguage: 'sv-SE',
+            isPartOf: {
+              '@type': 'WebSite',
+              name: 'bakabröd.nu',
+              url: 'https://xn--bakabrd-f1a.nu/',
+            },
+          })}
+        </script>
       </Helmet>
 
       <Routes>
@@ -93,7 +134,7 @@ function Guides() {
         </Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default Guides
+export default Guides;

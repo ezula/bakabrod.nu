@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
+
 Sitemap: https://xn--bakabrd-f1a.nu/sitemap.txt

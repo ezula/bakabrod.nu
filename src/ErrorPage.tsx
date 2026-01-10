@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
 
 function ErrorPage() {
   return (
@@ -22,7 +22,7 @@ function ErrorPage() {
         </p>
       </main>
     </>
-  )
+  );
 }
 
-export default ErrorPage
+export default ErrorPage;
