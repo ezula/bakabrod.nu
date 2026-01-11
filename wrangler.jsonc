@@ -6,8 +6,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "routes": [
-    { "pattern": "bakabrod.nu/*", "zone_id": "21dd629fd5a3e28d58007a27c75e9ea8" },
-    { "pattern": "www.bakabrod.nu/*", "zone_id": "21dd629fd5a3e28d58007a27c75e9ea8" }
+    { "pattern": "xn--bakabrd-f1a.nu/*", "zone_id": "21dd629fd5a3e28d58007a27c75e9ea8" },
+    { "pattern": "www.xn--bakabrd-f1a.nu/*", "zone_id": "21dd629fd5a3e28d58007a27c75e9ea8" }
   ],
   "assets": {
     "directory": ".open-next/assets",
