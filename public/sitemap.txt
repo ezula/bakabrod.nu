@@ -3,4 +3,6 @@ https://xn--bakabrd-f1a.nu/calculator
 https://xn--bakabrd-f1a.nu/aboutbread
 https://xn--bakabrd-f1a.nu/contact
 https://xn--bakabrd-f1a.nu/guides
-
+https://xn--bakabrd-f1a.nu/guides/starta-egen
+https://xn--bakabrd-f1a.nu/guides/baka-med-fullkorn
+https://xn--bakabrd-f1a.nu/guides/tips-tricks

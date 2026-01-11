@@ -1,3 +1,18 @@
+# Dependencies
+node_modules
+
+# Next.js
+.next
+out
+
+# OpenNext / Cloudflare
+.open-next
+.wrangler
+
+# Build
+dist
+dist-ssr
+
 # Logs
 logs
 *.log
@@ -7,10 +22,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Local
 *.local
+.env*.local
+.dev.vars
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +37,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
