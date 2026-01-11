@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
-import { recipes, formatTime, getTotalTime } from '@/lib/recipes';
+import { formatTime, getTotalTime, recipes } from '@/lib/recipes';
 
 export const metadata: Metadata = {
   title: 'Recept',
@@ -43,13 +44,21 @@ export default function RecipesPage() {
               href={`/recept/${recipe.slug}`}
               className="card bg-base-100 shadow-md hover:shadow-lg transition-shadow"
             >
-              {recipe.image && (
-                <figure className="h-48 bg-base-300">
+              <figure className="h-48 bg-base-300 relative overflow-hidden">
+                {recipe.image ? (
+                  <Image
+                    src={recipe.image}
+                    alt={recipe.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
                   <div className="flex items-center justify-center h-full text-6xl">
                     🍞
                   </div>
-                </figure>
-              )}
+                )}
+              </figure>
               <div className="card-body">
                 <h2 className="card-title">{recipe.name}</h2>
                 <p className="text-sm opacity-80 line-clamp-2">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { Calculator } from '@/components/Calculator';
 
 export const metadata: Metadata = {
@@ -40,7 +41,9 @@ export default function CalculatorPage() {
           }),
         }}
       />
-      <Calculator />
+      <Suspense>
+        <Calculator />
+      </Suspense>
     </>
   );
 }

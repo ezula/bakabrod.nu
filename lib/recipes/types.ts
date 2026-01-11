@@ -44,3 +44,29 @@ export function formatTime(minutes: number): string {
   }
   return `${hours} tim ${remainingMinutes} min`;
 }
+
+export function getTotalFlour(recipe: Recipe): number {
+  return recipe.ingredients
+    .filter(
+      (i) =>
+        i.unit === 'g' &&
+        (i.name.toLowerCase().includes('mjöl') ||
+          i.name.toLowerCase().includes('dinkel') ||
+          i.name.toLowerCase().includes('emmer')),
+    )
+    .reduce((sum, i) => sum + i.amount, 0);
+}
+
+export function getCalculatorUrl(recipe: Recipe): string {
+  const params = new URLSearchParams();
+  const flour = getTotalFlour(recipe);
+
+  if (flour > 0) params.set('flour', flour.toString());
+  if (recipe.hydration) params.set('hydration', recipe.hydration.toString());
+  if (recipe.saltPercentage)
+    params.set('salt', recipe.saltPercentage.toString());
+  if (recipe.starterPercentage)
+    params.set('sourdough', recipe.starterPercentage.toString());
+
+  return `/calculator?${params.toString()}`;
+}

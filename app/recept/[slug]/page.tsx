@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import {
-  recipes,
-  getRecipeBySlug,
-  getAllRecipeSlugs,
   formatTime,
+  getAllRecipeSlugs,
+  getCalculatorUrl,
+  getRecipeBySlug,
   getTotalTime,
   type Recipe,
 } from '@/lib/recipes';
@@ -31,6 +32,9 @@ export function generateMetadata({
         title: `${recipe.name} | bakabröd.nu`,
         description: recipe.description,
         type: 'article',
+        images: recipe.image
+          ? [`https://xn--bakabrd-f1a.nu${recipe.image}`]
+          : undefined,
       },
     };
   });
@@ -72,7 +76,7 @@ function generateRecipeSchema(recipe: Recipe) {
       name: 'bakabröd.nu',
       url: 'https://xn--bakabrd-f1a.nu',
     },
-    datePublished: '2024-01-01',
+    datePublished: '2025-01-11',
     recipeCategory: 'Bröd',
     recipeCuisine: 'Swedish',
     keywords: 'surdeg, surdegsbröd, bröd, baka',
@@ -92,9 +96,9 @@ export default async function RecipePage({
   }
 
   return (
-    <main className="min-h-screen bg-base-200 py-12">
+    <main className="min-h-screen bg-base-200 py-6 md:py-12">
       <div className="container mx-auto px-4 max-w-3xl">
-        <nav className="text-sm breadcrumbs mb-6">
+        <nav className="text-sm breadcrumbs mb-4 md:mb-6">
           <ul>
             <li>
               <Link href="/">Hem</Link>
@@ -112,6 +116,19 @@ export default async function RecipePage({
               {recipe.name}
             </h1>
             <p className="text-lg opacity-80 mb-6">{recipe.description}</p>
+
+            {recipe.image && (
+              <div className="relative w-full h-64 md:h-96 mb-6 rounded-lg overflow-hidden">
+                <Image
+                  src={recipe.image}
+                  alt={recipe.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  priority
+                />
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-2">
@@ -183,7 +200,7 @@ export default async function RecipePage({
                     `, ${recipe.starterPercentage}% surdeg`}
                 </p>
                 <Link
-                  href="/calculator"
+                  href={getCalculatorUrl(recipe)}
                   className="btn btn-sm btn-primary mt-2"
                 >
                   Använd kalkylatorn för att skala receptet

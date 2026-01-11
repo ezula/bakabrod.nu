@@ -1,6 +1,7 @@
 'use client';
 
-import { useReducer, useState } from 'react';
+import { useReducer, useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ReactGA from 'react-ga4';
 import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
 import sourdoughReducer, {
@@ -16,6 +17,8 @@ const initialState: SourdoughState = {
 };
 
 export function Calculator() {
+  const searchParams = useSearchParams();
+
   const [hydration, setHydration] = useState('72');
   const [flour, setFlour] = useState('600');
   const [water, setWater] = useState('');
@@ -23,6 +26,18 @@ export function Calculator() {
   const [sourdoughPercentage, setSourdoughPercentage] = useState('10');
   const [includeSourdough, setIncludeSourdough] = useState(false);
   const [waterOrFlour, setWaterOrFlour] = useState<'WATER' | 'FLOUR'>('FLOUR');
+
+  useEffect(() => {
+    const h = searchParams.get('hydration');
+    const f = searchParams.get('flour');
+    const s = searchParams.get('salt');
+    const sd = searchParams.get('sourdough');
+
+    if (h) setHydration(h);
+    if (f) setFlour(f);
+    if (s) setSaltPercentage(s);
+    if (sd) setSourdoughPercentage(sd);
+  }, [searchParams]);
 
   const [state, dispatch] = useReducer<SourdoughState, [SourdoughActions]>(
     sourdoughReducer,
