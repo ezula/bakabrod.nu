@@ -1,7 +1,7 @@
 'use client';
 
-import { useReducer, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useEffect, useReducer, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { HiOutlineSwitchHorizontal } from 'react-icons/hi';
 import sourdoughReducer, {

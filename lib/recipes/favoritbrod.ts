@@ -16,7 +16,11 @@ export const favoritbrod: Recipe = {
   starterPercentage: 20,
   ingredients: [
     { amount: 770, unit: 'g', name: 'vatten' },
-    { amount: 500, unit: 'g', name: 'vetemjöl (gärna ölandsvete eller dinkel)' },
+    {
+      amount: 500,
+      unit: 'g',
+      name: 'vetemjöl (gärna ölandsvete eller dinkel)',
+    },
     {
       amount: 500,
       unit: 'g',

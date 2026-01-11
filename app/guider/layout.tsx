@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     'Lär dig baka surdegsbröd: starta egen surdegsgrund, baka med fullkorn och få tips för perfekt bröd varje gång. Guider för nybörjare och erfarna.',
   alternates: {
-    canonical: '/guides',
+    canonical: '/guider',
   },
   openGraph: {
     title: 'Brödguider - Lär dig baka surdegsbröd',
     description:
       'Lär dig baka surdegsbröd: starta egen surdegsgrund, baka med fullkorn och få tips för perfekt bröd varje gång.',
-    url: '/guides',
+    url: '/guider',
   },
 };
 
@@ -30,7 +30,7 @@ export default function GuidesLayout({
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
             name: 'Brödguider',
-            url: 'https://xn--bakabrd-f1a.nu/guides',
+            url: 'https://xn--bakabrd-f1a.nu/guider',
             description:
               'Guider för att lära sig baka surdegsbröd: starta surdegsgrund, baka med fullkorn och tips för perfekt bröd',
             inLanguage: 'sv-SE',
@@ -49,8 +49,9 @@ export default function GuidesLayout({
             <article className="prose prose-sm md:prose-lg lg:prose-xl">
               <h1 className="text-secondary">Brödguider</h1>
               <p>
-                Här kommer lite guider snart om hur man t.ex. startar sin egen
-                surdegsgrund eller kommer igång med att baka med surdeg.
+                Här hittar du guider för att lyckas med ditt surdegsbröd – från
+                att baka i gryta till att starta din egen surdegsgrund. Välj en
+                guide i menyn för att komma igång.
               </p>
               {children}
             </article>

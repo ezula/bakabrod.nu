@@ -68,5 +68,5 @@ export function getCalculatorUrl(recipe: Recipe): string {
   if (recipe.starterPercentage)
     params.set('sourdough', recipe.starterPercentage.toString());
 
-  return `/calculator?${params.toString()}`;
+  return `/kalkylator?${params.toString()}`;
 }

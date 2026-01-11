@@ -4,11 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { IoMdArrowDropdown } from 'react-icons/io';
 
-const guides = [
-  { href: '/guides/starta-egen', label: 'Starta din egen surdegsgrund' },
-  { href: '/guides/baka-med-fullkorn', label: 'Baka med fullkorn' },
-  { href: '/guides/tips-tricks', label: 'Tips & tricks' },
-];
+const guides = [{ href: '/guider/baka-i-gryta', label: 'Surdegsbröd i gryta' }];
 
 export function GuidesNav() {
   const pathname = usePathname();

@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRef, useState } from 'react'
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
 
 export function Navbar() {
-  const menuRef = useRef<HTMLDetailsElement>(null)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDetailsElement>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => {
     if (menuRef.current) {
-      menuRef.current.removeAttribute('open')
+      menuRef.current.removeAttribute('open');
     }
-  }
+  };
 
   return (
     <header className="navbar bg-base-100">
@@ -73,7 +73,7 @@ export function Navbar() {
             <Link href="/recept">Recept</Link>
           </li>
           <li className="outline-dotted rounded-md outline-primary">
-            <Link href="/guides">Guider</Link>
+            <Link href="/guider">Guider</Link>
           </li>
           <li>
             <details ref={menuRef}>
@@ -82,16 +82,16 @@ export function Navbar() {
                 <li
                   onClick={closeMenu}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') closeMenu()
+                    if (e.key === 'Enter' || e.key === ' ') closeMenu();
                   }}
                 >
-                  <Link href="/aboutbread">Fakta om bröd</Link>
+                  <Link href="/om-brod">Fakta om bröd</Link>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <Link href="/contact">Kontakt</Link>
+            <Link href="/kontakt">Om oss</Link>
           </li>
         </ul>
       </nav>
@@ -116,7 +116,7 @@ export function Navbar() {
               </Link>
             </li>
             <li className="outline-dotted rounded-md outline-primary">
-              <Link href="/guides" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/guider" onClick={() => setIsMenuOpen(false)}>
                 Guider
               </Link>
             </li>
@@ -125,10 +125,7 @@ export function Navbar() {
                 <summary>Om bröd</summary>
                 <ul className="p-2 bg-base-100">
                   <li>
-                    <Link
-                      href="/aboutbread"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
+                    <Link href="/om-brod" onClick={() => setIsMenuOpen(false)}>
                       Fakta om bröd
                     </Link>
                   </li>
@@ -136,13 +133,13 @@ export function Navbar() {
               </details>
             </li>
             <li>
-              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                Kontakt
+              <Link href="/kontakt" onClick={() => setIsMenuOpen(false)}>
+                Om oss
               </Link>
             </li>
           </ul>
         </div>
       )}
     </header>
-  )
+  );
 }

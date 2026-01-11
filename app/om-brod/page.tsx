@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     'Läs om surdegsbröd: hälsofördelar, historia och varför hemlagat bröd med surdeg är bättre för din hälsa än industribakat bröd.',
   alternates: {
-    canonical: '/aboutbread',
+    canonical: '/om-brod',
   },
   openGraph: {
     title: 'Fakta om bröd och surdeg - Hälsofördelar och historia',
     description:
       'Läs om surdegsbröd: hälsofördelar, historia och varför hemlagat bröd med surdeg är bättre för din hälsa.',
-    url: '/aboutbread',
+    url: '/om-brod',
     type: 'article',
   },
 };
@@ -40,8 +40,9 @@ export default function AboutBreadPage() {
           Den ökande trenden att utesluta bröd handlar sällan om bröd i sig,
           utan om vilket bröd vi äter. Stora delar av dagens industribröd bakas
           på raffinerat vitt mjöl, där de näringsrika delarna av kornet har
-          siktats bort. Kvar blir främst stärkelse, vilket ger ett näringsfattigt
-          bröd med högt kaloriinnehåll som snabbt höjer blodsockret.
+          siktats bort. Kvar blir främst stärkelse, vilket ger ett
+          näringsfattigt bröd med högt kaloriinnehåll som snabbt höjer
+          blodsockret.
         </p>
         <p>
           När kroppen reagerar negativt är det lätt att dra slutsatsen att man
@@ -85,9 +86,7 @@ export default function AboutBreadPage() {
           </a>
         </p>
 
-        <p className="text-sm opacity-70">
-          Senast uppdaterad: 11 januari 2025
-        </p>
+        <p className="text-sm opacity-70">Senast uppdaterad: 11 januari 2025</p>
       </article>
     </main>
   );

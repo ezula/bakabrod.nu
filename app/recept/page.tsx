@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { formatTime, getTotalTime, recipes } from '@/lib/recipes';
 
 export const metadata: Metadata = {
-  title: 'Recept',
+  title: 'Surdegsbröd recept - Enkla recept för hembakning',
   description:
-    'Surdegsbrödsrecept med tydliga instruktioner. Från klassiskt surdegsbröd till focaccia och kanelbullar.',
+    'Våra bästa surdegsbröd recept med tydliga steg-för-steg instruktioner. Perfekt för nybörjare och erfarna bagare. Baka surdegsbröd i gryta eller på bakstål.',
   openGraph: {
-    title: 'Surdegsbrödsrecept | bakabröd.nu',
+    title: 'Surdegsbröd recept | bakabröd.nu',
     description:
-      'Surdegsbrödsrecept med tydliga instruktioner. Från klassiskt surdegsbröd till focaccia och kanelbullar.',
+      'Våra bästa surdegsbröd recept med tydliga steg-för-steg instruktioner. Perfekt för nybörjare och erfarna bagare.',
   },
 };
 

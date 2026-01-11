@@ -63,7 +63,7 @@ function generateRecipeSchema(recipe: Recipe) {
     totalTime: formatDuration(getTotalTime(recipe)),
     recipeYield: recipe.yields,
     recipeIngredient: recipe.ingredients.map(
-      (i) => `${i.amount} ${i.unit} ${i.name}`
+      (i) => `${i.amount} ${i.unit} ${i.name}`,
     ),
     recipeInstructions: recipe.steps.map((step, index) => ({
       '@type': 'HowToStep',

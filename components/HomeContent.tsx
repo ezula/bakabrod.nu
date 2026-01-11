@@ -13,30 +13,31 @@ export function HomeContent() {
       nonInteraction: false,
       transport: 'xhr',
     });
-    router.push('/calculator');
+    router.push('/kalkylator');
   };
 
   return (
     <main className="min-h-screen bg-base-200">
       <div className="container flex gap-8 flex-col mx-auto items-center">
-        <div className="max-w-md pt-8">
-          <h1 className="text-5xl font-bold">
-            Välkommen till{' '}
-            <span className="inline-block rotate-6 text-secondary">
-              bakabröd.nu
-            </span>
+        <section className="w-full py-12 md:py-20 px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            <span className="text-secondary">bakabröd</span>
+            <span className="text-base-content/60">.nu</span>
           </h1>
-        </div>
-
-        <div className="flex justify-center mt-8 mb-8">
-          <button
-            type="button"
-            className="btn btn-primary btn-xl"
-            onClick={handleOnClick}
-          >
-            Till kalkylatorn
-          </button>
-        </div>
+          <p className="mt-4 text-lg md:text-xl text-base-content/70 max-w-lg mx-auto">
+            Din kompletta guide till surdegsbröd – från kalkylator till recept
+            och guider.
+          </p>
+          <div className="mt-8">
+            <button
+              type="button"
+              className="btn btn-primary btn-lg"
+              onClick={handleOnClick}
+            >
+              Till kalkylatorn
+            </button>
+          </div>
+        </section>
 
         <div className="pl-4 pr-4">
           <article className="prose prose-sm md:prose-lg lg:prose-xl">

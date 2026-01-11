@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Gratis surdegskalkylator - räkna ut hydreringsgrad, mjöl, vatten och salt för ditt surdegsbröd. Anpassa mängder efter antal bröd du vill baka.',
   alternates: {
-    canonical: '/calculator',
+    canonical: '/kalkylator',
   },
   openGraph: {
     title: 'Surdegskalkylator - Beräkna mjöl, vatten och hydreringsgrad',
     description:
       'Gratis surdegskalkylator - räkna ut hydreringsgrad, mjöl, vatten och salt för ditt surdegsbröd.',
-    url: '/calculator',
+    url: '/kalkylator',
   },
 };
 
@@ -27,7 +27,7 @@ export default function CalculatorPage() {
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'Surdegskalkylatorn',
-            url: 'https://xn--bakabrd-f1a.nu/calculator',
+            url: 'https://xn--bakabrd-f1a.nu/kalkylator',
             description:
               'Gratis surdegskalkylator för att beräkna mjöl, vatten, salt och hydreringsgrad för surdegsbröd',
             applicationCategory: 'UtilityApplication',
