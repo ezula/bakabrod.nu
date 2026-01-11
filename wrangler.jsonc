@@ -4,9 +4,10 @@
   "name": "bakabrod-nu",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
   "routes": [
-    { "pattern": "bakabrod.nu", "custom_domain": true },
-    { "pattern": "www.bakabrod.nu", "custom_domain": true }
+    { "pattern": "bakabrod.nu/*", "zone_id": "21dd629fd5a3e28d58007a27c75e9ea8" },
+    { "pattern": "www.bakabrod.nu/*", "zone_id": "21dd629fd5a3e28d58007a27c75e9ea8" }
   ],
   "assets": {
     "directory": ".open-next/assets",
