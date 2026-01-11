@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:cloudflare": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "biome check app components lib",
     "lint:fix": "biome check --write app components lib",
