@@ -81,9 +81,9 @@ export const favoritbrod: Recipe = {
     },
   ],
   tips: [
+    'Om du älskar frukt och nötter som vi, tillsätt en näve blötlagda hackade valnötter och torkade fikon.',
     'Emmer är ett urgammalt vete med fin nötig smak som passar utmärkt i surdegsbröd.',
     'Virvelmalet mjöl ger en finare struktur än stenmalet.',
     'Ölandsvete eller dinkel ger brödet extra smak och karaktär.',
-    'Förvara brödet i en brödpåse för att behålla fuktigheten.',
   ],
 };

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Fakta om bröd och surdeg - Hälsofördelar och historia',
@@ -23,53 +22,57 @@ export default function AboutBreadPage() {
       <article className="prose prose-sm md:prose-lg lg:prose-xl">
         <h1 className="text-secondary">Fakta om bröd, spannmål och gluten</h1>
         <p>
-          Idag är en av de största hälsobovarna gluten. Men är det helt sant?
-          Forskning visar att fullkorn är det livsmedel som förebygger ohälsa
-          mest! Fullkorn finns bara i spannmål, i våra fyra sädesslag - vete,
-          råg, havre och korn. Spannmål har en balanserad och bra sammansättning
-          av protein, kolhydrater, fett, fibrer och vitaminer och mineraler.
-          Fullkorn är riktigt bra för tarmhälsan där också den största delen av
-          vårat immunförsvar sitter.
+          Gluten har på senare år pekats ut som en av våra stora hälsobovar. Men
+          stämmer det verkligen? Forskning visar tvärtom att fullkorn är ett av
+          de livsmedel som har starkast samband med god hälsa och minskad risk
+          för flera folksjukdomar. Fullkorn är en naturlig del av spannmål och
+          finns i våra fyra sädesslag: vete, råg, havre och korn.
         </p>
         <p>
-          Så varför är den nya hälsotrenden en trend utan bröd? Jo för att
-          industrin har skapat ett näringsfattigt bröd med högt kaloriinnehåll
-          som skjuter blodsockret i höjden - dvs industribröd består mestadels
-          bara av vitt mjöl (den innersta delen av kärnan där det vita pulvret
-          sitter som består av mestadels stärkelse, resten av kärnan har siktats
-          bort). Många får därför också problem med magen och tror helt enkelt
-          att de inte tål bröd. Det är såklart skillnad på bröd och bröd.
+          Spannmål har en välbalanserad sammansättning av kolhydrater, protein,
+          fett, fibrer samt viktiga vitaminer och mineraler. Fullkorn är
+          särskilt rikt på kostfibrer som gynnar tarmhälsan – och det är i
+          tarmen som en stor del av vårt immunförsvar finns.
         </p>
 
-        <h2>Hur tar man då del av fullkornets fördelar?</h2>
+        <h2>Varför väljer många bort bröd?</h2>
         <p>
-          Lättaste sättet är att baka eget bröd på fullkornsmjöl, där inget har
-          siktats bort!
+          Den ökande trenden att utesluta bröd handlar sällan om bröd i sig,
+          utan om vilket bröd vi äter. Stora delar av dagens industribröd bakas
+          på raffinerat vitt mjöl, där de näringsrika delarna av kornet har
+          siktats bort. Kvar blir främst stärkelse, vilket ger ett näringsfattigt
+          bröd med högt kaloriinnehåll som snabbt höjer blodsockret.
         </p>
         <p>
-          Bakar man dessutom på surdeg så frigör man mer näring från mjölet än
-          om man hade bakat med jäst. Vill man ha ut maximalt av näringen i
-          fullkornsmjöl kan man mala sitt mjöl själv, Bröd och Kvarn har olika
-          stenkvarnar för hemmabruk (dessutom är de en snygg inredningsdetalj).
-          En kärna kan lagras nästan hur länge som helst men när kärnan krossas
-          eller mals till mjöl börjar den härskna och tappar näring ju längre
-          den står. Om man får tag på färskt mjöl så kan man lagra det i frysen
-          för att behålla så mycket näring som möjligt. Gå till en lokal kvarn
-          och fråga efter fullkornsmjöl av olika sorter eller beställ på nätet!
+          När kroppen reagerar negativt är det lätt att dra slutsatsen att man
+          inte tål bröd – när det i själva verket handlar om skillnaden mellan
+          raffinerat bröd och riktigt fullkornsbröd. Det är helt enkelt skillnad
+          på bröd och bröd.
         </p>
-        <p>Börja baka eget bröd och ta del av fullkornets fördelar!</p>
 
-        <figure>
-          <Image
-            src="https://www.brodochkvarn.se/wp-content/uploads/2016/02/s%C3%A4d.png"
-            alt="Sädesslag"
-            width={600}
-            height={400}
-            className="rounded-lg"
-            unoptimized
-          />
-          <figcaption>Olika sädesslag</figcaption>
-        </figure>
+        <h2>Så tar du del av fullkornets fördelar</h2>
+        <p>
+          Det enklaste sättet att få i sig fullkorn är att baka eget bröd på
+          fullkornsmjöl, där inget av kornets delar har tagits bort. Bakning med
+          surdeg kan dessutom öka tillgängligheten av näringsämnen jämfört med
+          jästbröd.
+        </p>
+        <p>
+          För den som vill maximera näringsinnehållet går det även att mala sitt
+          mjöl själv. Hela sädeskärnor kan lagras under lång tid, men när de
+          mals till mjöl börjar näringen gradvis brytas ned. Färskt mjöl ger
+          därför både bättre smak och högre näringsvärde. Bröd och Kvarn
+          erbjuder stenkvarnar för hemmabruk – funktionella och dessutom en
+          vacker detalj i köket.
+        </p>
+        <p>
+          Om du köper färskt fullkornsmjöl kan det med fördel förvaras i frysen
+          för att bevara näringen längre. Besök gärna en lokal kvarn, fråga
+          efter fullkornsmjöl av olika sorter eller beställ på nätet.
+        </p>
+        <p>
+          Börja baka eget bröd – och ta del av fullkornets alla hälsofördelar.
+        </p>
 
         <p>
           Källa:{' '}
@@ -80,6 +83,10 @@ export default function AboutBreadPage() {
           >
             www.brodinstitutet.se
           </a>
+        </p>
+
+        <p className="text-sm opacity-70">
+          Senast uppdaterad: 11 januari 2025
         </p>
       </article>
     </main>

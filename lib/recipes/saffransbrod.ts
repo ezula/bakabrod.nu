@@ -40,7 +40,7 @@ export const saffransbrod: Recipe = {
     {
       title: 'Vik 2 med russin',
       description:
-        'Upprepa samma vikning som ovan. Tillsätt de blötlagda russinen och arbeta in dem försiktigt i degen. Låt vila ytterligare 20-30 minuter.',
+        'Häll de blötlagda russinen ovanpå degen, tryck lätt ner russinen med fingrarna, upprepa sedan vikning som ovan. Låt vila ytterligare 20-30 minuter.',
       duration: 25,
     },
     {
