@@ -4,6 +4,11 @@
   "name": "bakabrod-nu",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": ["nodejs_compat"],
+  // Uncomment these lines after testing to connect custom domain:
+  // "routes": [
+  //   { "pattern": "bakabrod.nu", "custom_domain": true },
+  //   { "pattern": "www.bakabrod.nu", "custom_domain": true }
+  // ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
