@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import { AnalyticsProvider } from '@/components/AnalyticsProvider';
-import { CookieNotice } from '@/components/CookieNotice';
-import { Footer } from '@/components/Footer';
-import { Navbar } from '@/components/Navbar';
-import '@/app/globals.css';
+import type { Metadata } from 'next'
+import { AnalyticsProvider } from '@/components/AnalyticsProvider'
+import { CookieNotice } from '@/components/CookieNotice'
+import { Footer } from '@/components/Footer'
+import { Navbar } from '@/components/Navbar'
+import '@/app/globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://xn--bakabrd-f1a.nu'),
@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     'hydrering',
     'degkalkylator',
     'baka bröd',
+    'surdegskurs',
+    'hantverksbröd',
+    'kulturspannmål',
+    'hälsa',
   ],
   authors: [{ name: 'bakabröd.nu' }],
   creator: 'bakabröd.nu',
@@ -53,12 +57,12 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="sv">
@@ -73,5 +77,5 @@ export default function RootLayout({
         </AnalyticsProvider>
       </body>
     </html>
-  );
+  )
 }

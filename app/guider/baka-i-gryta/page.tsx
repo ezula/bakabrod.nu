@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Surdegsbröd i gryta - Så bakar du perfekt bröd',
@@ -13,11 +13,75 @@ export const metadata: Metadata = {
     description:
       'Lär dig baka surdegsbröd i gjutjärnsgryta. Komplett guide med temperaturer och tips för perfekt skorpa.',
   },
-};
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Surdegsbröd i gryta',
+  description:
+    'Lär dig baka surdegsbröd i gjutjärnsgryta. Komplett guide med steg-för-steg instruktioner, temperaturer och tips för perfekt skorpa och luftig inkråm.',
+  image: 'https://xn--bakabrd-f1a.nu/bread-in-dutch-oven.jpg',
+  totalTime: 'PT90M',
+  supply: [
+    { '@type': 'HowToSupply', name: 'Surdegsbröddeg' },
+    { '@type': 'HowToSupply', name: 'Bakplåtspapper' },
+  ],
+  tool: [
+    { '@type': 'HowToTool', name: 'Gjutjärnsgryta med lock (3-4 liter)' },
+    { '@type': 'HowToTool', name: 'Ugn' },
+    { '@type': 'HowToTool', name: 'Brödlame eller vass kniv' },
+    { '@type': 'HowToTool', name: 'Grytlappar' },
+    { '@type': 'HowToTool', name: 'Galler' },
+  ],
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Förvärm ugn och gryta',
+      text: 'Sätt in grytan med lock i ugnen och värm till 250°C. Låt grytan bli ordentligt varm i minst 30 minuter.',
+      image: '',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Förbered degen',
+      text: 'Ta ut din deg ur jäskorgen och lägg den på ett bakplåtspapper. Skåra toppen med ett vasst blad eller en brödlame.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Lägg degen i grytan',
+      text: 'Ta försiktigt ut den heta grytan ur ugnen. Lyft degen med hjälp av bakplåtspappret och sänk ner den i grytan. Sätt på locket.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Grädda med lock',
+      text: 'Grädda i 20-25 minuter med locket på vid 250°C. Under denna tid skapas ångan som gör att brödet kan expandera ordentligt.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Grädda utan lock',
+      text: 'Ta av locket och sänk värmen till 210-220°C. Grädda i ytterligare 20-25 minuter tills brödet är gyllene och har en intern temperatur på cirka 96-98°C.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 6,
+      name: 'Låt svalna',
+      text: 'Lyft ut brödet och låt det svalna på ett galler i minst en timme innan du skär i det.',
+    },
+  ],
+}
 
 export default function BakaIGrytaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <h2>Surdegsbröd i gryta</h2>
       <p>
         Att baka surdegsbröd i en gjutjärnsgryta är ett av de enklaste sätten
@@ -178,5 +242,5 @@ export default function BakaIGrytaPage() {
 
       <p className="text-sm opacity-70">Senast uppdaterad: 11 januari 2025</p>
     </>
-  );
+  )
 }

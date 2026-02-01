@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Om bakabröd.nu – Din resurs för surdegsbröd',
@@ -13,11 +13,35 @@ export const metadata: Metadata = {
       'bakabröd.nu erbjuder verktyg, recept och guider för dig som vill baka riktigt bröd med surdeg.',
     url: '/kontakt',
   },
-};
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Skälby Hantverksbröd',
+  url: 'https://xn--bakabrd-f1a.nu',
+  logo: 'https://xn--bakabrd-f1a.nu/logo-bread.png',
+  description:
+    'bakabröd.nu är en del av Skälby Hantverksbröd och erbjuder verktyg, recept och guider för surdegsbröd.',
+  email: 'svensmikael@gmail.com',
+  sameAs: ['https://www.instagram.com/ellinor.westerlund/'],
+  foundingDate: '2025',
+  knowsAbout: [
+    'Surdegsbakning',
+    'Hantverksbröd',
+    'Kulturspannmål',
+    'Bagarprocent',
+    'Brödhydrering',
+  ],
+}
 
 export default function ContactPage() {
   return (
     <main className="container max-w-5xl mx-auto p-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="prose prose-sm md:prose-lg lg:prose-xl">
         <h1 className="text-secondary">Om bakabröd.nu</h1>
         <p>
@@ -36,11 +60,15 @@ export default function ContactPage() {
 
         <h2>Idén bakom sajten</h2>
         <p>
-          bakabröd.nu startades av en utvecklare med passion för hembakat bröd.
-          Idén föddes vid köksbordet – under experimenterande med olika
-          hydreringsgrader och brödstorlekar uppstod behovet av ett enkelt
-          verktyg för att räkna ut ingrediensmängder. Det blev starten på
-          degkalkylatorn, och sedan dess har sajten vuxit med recept och guider.
+          bakabröd.nu är en del av Skälby Hantverksbröd i Västerås och drivs av
+          Ellinor, som har en passion för surdeg och riktigt bröd. Recepten och
+          guiderna bygger på erfarenhet från otaliga bakningar – med fokus på
+          naturliga ingredienser, långsam jäsning och kulturspannmål.
+        </p>
+        <p>
+          Degkalkylatorn skapades för att göra det enklare att experimentera med
+          olika hydreringsgrader och receptstorlekar, utan att behöva räkna för
+          hand varje gång.
         </p>
 
         <h2>Kontakt</h2>
@@ -51,5 +79,5 @@ export default function ContactPage() {
         </p>
       </article>
     </main>
-  );
+  )
 }

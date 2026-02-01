@@ -1,0 +1,119 @@
+# bakabrod.nu
+
+> En svensk webbplats om surdegsbakning för hemmabagare. Allt du behöver för att lyckas med surdegsbröd: kalkylator, recept och guider.
+
+## Om sajten
+
+bakabrod.nu är en kostnadsfri resurs för hemmabagare som vill lära sig baka surdegsbröd. Sajten fokuserar på:
+
+- **Bagarprocent** - det professionella sättet att beräkna brödrecept där mjöl = 100%
+- **Hydrering** - hur vattenhalten påverkar brödets struktur och smak
+- **Långsam jäsning** - kall efterjäsning i 12-24 timmar för bästa smak
+- **Fullkorn och urgamla spannmål** - emmer, dinkel, ölandsvete
+
+## Huvudfunktioner
+
+### Surdegskalkylator
+URL: /kalkylator
+
+En gratis webbkalkylator för att beräkna ingredienser till surdegsbröd:
+- Justera hydrering (typiskt 65-85%)
+- Justera saltprocent (typiskt 2-2.5%)
+- Justera surdegsprocent (typiskt 10-33%)
+- Ange önskad mjölmängd
+- Få exakta grammängder för mjöl, vatten, salt och surdeg
+
+### Recept
+URL: /recept
+
+Detaljerade surdegsrecept med steg-för-steg-instruktioner:
+
+1. **Klassiskt ljust bröd** (/recept/klassiskt-ljust-brod)
+   - Nybörjarvänligt recept
+   - Hydrering: 71%, Salt: 2.4%, Surdeg: 33%
+   - 18 timmars total jästid
+   - Perfekt första surdegsbröd
+
+2. **Favoritbröd 50/50** (/recept/favoritbrod-50-50)
+   - 50% vete, 50% fullkorn emmer
+   - Hydrering: 77%, Salt: 2.2%, Surdeg: 20%
+   - Nötig smak från emmermjöl
+   - Kan berikas med valnötter och fikon
+
+3. **Saffransbröd** (/recept/saffransbrod)
+   - Lyxigt högtidsbröd med saffran och russin
+   - Hydrering: 75%, Salt: 2.5%, Surdeg: 20%
+   - Ölandsvete och dinkel
+   - Perfekt till jul och påsk
+
+### Guider
+URL: /guider
+
+Praktiska guider för bättre bröd:
+
+1. **Baka surdegsbröd i gryta** (/guider/baka-i-gryta)
+   - Varför grytbakning ger perfekt skorpa
+   - Steg-för-steg med temperaturer och tider
+   - Förvärm gryta: 250°C i 30 min
+   - Baka med lock: 250°C i 20-25 min
+   - Baka utan lock: 210-220°C i 20-25 min
+   - Alternativ för den som saknar gryta
+
+## Vanliga frågor och svar
+
+### Vad är bagarprocent?
+Bagarprocent är ett system där mjölmängden alltid är 100% och alla andra ingredienser uttrycks som procent av mjölet. Exempel: 72% hydrering betyder 720g vatten per 1000g mjöl.
+
+### Vad är hydrering?
+Hydrering är vattenhalten i degen uttryckt som procent av mjölvikten. Högre hydrering (75-85%) ger luftigare bröd men är svårare att hantera. Lägre hydrering (65-72%) ger tätare bröd som är lättare för nybörjare.
+
+### Hur mycket surdeg ska jag använda?
+Typiskt 10-33% av mjölvikten. Mer surdeg ger snabbare jäsning, mindre surdeg ger längre jäsning och mer komplex smak.
+
+### Hur mycket salt ska jag använda?
+Standard är 2-2.5% av mjölvikten. Salt kontrollerar jäsningen och ger smak. Under 2% ger smaklöst bröd, över 3% hämmar jästen.
+
+### Varför baka i gryta?
+Gjutjärnsgryta fångar ångan från degen vilket ger en knaprig skorpa och bättre jäsning i ugnen. Det efterliknar professionella bageriers ångugnar.
+
+### Hur länge håller surdegsbröd?
+Surdegsbröd håller sig fräscht längre än jästbröd tack vare den naturliga jäsningen. Räkna med 4-5 dagar i rumstemperatur, längre i kylskåp, och det fryser utmärkt.
+
+## Tekniska fakta om bakning
+
+### Temperaturer
+- Surdeg trivs bäst vid 24-26°C
+- Kall efterjäsning i kylskåp: 4-8°C
+- Baktemperatur: 230-250°C initialt, sedan 200-220°C
+- Färdigt bröd har innertemperatur på ca 96-98°C
+
+### Tider
+- Autolyse (vila mjöl+vatten): 30-60 min
+- Bulkjäsning: 3-5 timmar vid rumstemperatur
+- Vikningar: var 30-45 min under bulkjäsningen
+- Kall efterjäsning: 8-24 timmar
+- Bakning: 40-50 min totalt
+
+### Mjöltyper för surdeg
+- **Vetemjöl** - ger struktur och gluten
+- **Grahamsmjöl** - fullkornsvete för smak och näring
+- **Dinkelmjöl** - urgammalt vete med mild smak
+- **Emmermjöl** - nötigt, urgammalt spannmål
+- **Ölandsvete** - svenskt lantsortvete
+
+## Kontakt
+
+E-post: svensmikael@gmail.com
+Sajten drivs av en utvecklare med passion för hembakning.
+
+## Relaterade ämnen
+
+- Surdegsbakning
+- Hembakat bröd
+- Bagarprocent
+- Brödhydrering
+- Surdegsstarter/surdegsmoder
+- Fullkornsbröd
+- Långjäst bröd
+- Grytbakat bröd
+- Svenska brödtraditioner

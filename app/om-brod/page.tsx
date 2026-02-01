@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Fakta om bröd och surdeg - Hälsofördelar och historia',
@@ -14,11 +14,51 @@ export const metadata: Metadata = {
     url: '/om-brod',
     type: 'article',
   },
-};
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Fakta om bröd, spannmål och gluten',
+  description:
+    'Läs om surdegsbröd: hälsofördelar, historia och varför hemlagat bröd med surdeg är bättre för din hälsa än industribakat bröd.',
+  author: {
+    '@type': 'Organization',
+    name: 'Skälby Hantverksbröd',
+    url: 'https://xn--bakabrd-f1a.nu',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'bakabröd.nu',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://xn--bakabrd-f1a.nu/logo-bread.png',
+    },
+  },
+  datePublished: '2025-01-11',
+  dateModified: '2025-01-11',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': 'https://xn--bakabrd-f1a.nu/om-brod',
+  },
+  articleSection: 'Hälsa och näring',
+  keywords: [
+    'fullkorn',
+    'surdegsbröd',
+    'gluten',
+    'hälsofördelar',
+    'näringsinnehåll',
+    'fullkornsmjöl',
+  ],
+}
 
 export default function AboutBreadPage() {
   return (
     <main className="container max-w-5xl mx-auto p-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="prose prose-sm md:prose-lg lg:prose-xl">
         <h1 className="text-secondary">Fakta om bröd, spannmål och gluten</h1>
         <p>
@@ -89,5 +129,5 @@ export default function AboutBreadPage() {
         <p className="text-sm opacity-70">Senast uppdaterad: 11 januari 2025</p>
       </article>
     </main>
-  );
+  )
 }
