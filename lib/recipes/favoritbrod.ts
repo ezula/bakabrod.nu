@@ -1,4 +1,4 @@
-import type { Recipe } from './types';
+import type { Recipe } from './types'
 
 export const favoritbrod: Recipe = {
   slug: 'favoritbrod-50-50',
@@ -33,61 +33,63 @@ export const favoritbrod: Recipe = {
     {
       title: 'Blanda degen',
       description:
-        'Vispa samman vatten, surdeg, fullkornsmjölet och saltet till en jämn smet. Häll i vetemjölet och blanda ihop med händerna eller en slev tills allt mjöl är blandat. Behöver inte knådas. Täck bunken med ett lock och låt vila i 30 minuter.',
+        'Mät upp vattnet i en rymlig degbunke. Lös upp surdegen i vattnet. Tillsätt det finmalda fullkorns-emmermjölet och saltet och vispa kraftigt i en minut. Häll i vetemjölet och rör ihop med en degskrapa eller händerna. Degen blir relativt lös tack vare den höga hydreringen (77%) — det är helt normalt. Täck bunken och låt vila 30 minuter.',
       duration: 35,
     },
     {
-      title: 'Vik 1',
+      title: 'Första vikningen',
       description:
-        'Vik degen från kanterna och in mot mitten. Dra lätt i degen men den ska inte dras sönder. Upprepa hela vägen runt tills degen börjar kännas stum. Låt vila 20-30 minuter.',
+        'Fukta händerna och vik degen: ta tag i ena sidan, sträck uppåt och vik över till motsatt sida. Vrid bunken och upprepa 4-6 gånger. Emmerdegen känns lite mer lösare än ren vetedeg — var inte orolig, den stärks med varje vikning. Vila 20-30 minuter.',
       duration: 25,
     },
     {
-      title: 'Vik 2',
+      title: 'Andra vikningen',
       description:
-        'Upprepa samma vikning som ovan. Låt vila ytterligare 20-30 minuter.',
+        'Samma teknik igen. Nu bör degen redan hålla ihop betydligt bättre och kännas mer elastisk. Du ska kunna lyfta degen utan att den rinner iväg. Vila 20-30 minuter.',
       duration: 25,
     },
     {
-      title: 'Vik 3',
-      description: 'Gör en sista vikning på samma sätt som tidigare.',
+      title: 'Tredje vikningen',
+      description:
+        'En sista omgång vikningar. Degen ska nu kännas luftig och sammanhållen. Emmersmjölet ger en karakteristisk smidig textur. Var varsam och behåll luften i degen.',
       duration: 5,
     },
     {
-      title: 'Jäsning',
+      title: 'Bulkjäsning',
       description:
-        'Låt degen jäsa i rumstemperatur i cirka 4-5 timmar. Degen ska nästan ha fördubblats i storlek.',
+        'Jäs i rumstemperatur i 4-5 timmar. Eftersom receptet ger två bröd är det en stor degmängd — kontrollera att bunken är tillräckligt rymlig. Degen är klar när den ökat med 50-75% och ytan har synliga jäsbubblor.',
       duration: 270,
     },
     {
-      title: 'Forma bröden',
+      title: 'Dela och forma bröden',
       description:
-        'Mjöla en handduk i en jäskorg. Dela degen i två delar och forma varje del till en rund boll. Låt vila på bänken i 15-20 minuter. Gör en sista formning och lägg i jäskorgar med sömmen uppåt.',
+        'Mjöla arbetsytan och stjälp ut degen. Dela i två lika stora delar med en degskrapa. Förforma varje del till en rundling och låt vila 15-20 minuter på bänken. Gör sedan en slutformning och placera i mjölade jäskorgar med sömmen uppåt.',
       duration: 25,
     },
     {
       title: 'Kylskåpsjäsning',
       description:
-        'Täck jäskorgarna och låt vila i kylen i 12-24 timmar. Den långa, kalla jäsningen utvecklar smaken.',
+        'Täck korgarna med plastfolie och ställ i kylen 12-24 timmar. Den kalla jäsningen är extra viktig för detta bröd — emmervetet utvecklar en nötig, nästan honungslik smak under den långsamma fermenteringen.',
       duration: 1080,
     },
     {
       title: 'Förbered ugnen',
       description:
-        'Värm upp ugnen ordentligt med bakstål eller gryta till 250 grader. Låt bli riktigt varm i minst 30 minuter.',
+        'Värm ugnen till 250°C med gryta eller bakstål. Eftersom du bakar två bröd kan du antingen använda två grytor samtidigt eller baka ett i taget. Ge ugnen minst 30 minuters uppvärmningstid.',
       duration: 30,
     },
     {
-      title: 'Grädda brödet',
+      title: 'Grädda bröden',
       description:
-        'Stjälp ut brödet i grytan eller på bakstålet. Grädda i 20 minuter med lock (eller med ånga), sänk sedan värmen till 210 grader och grädda ytterligare 20 minuter utan lock tills brödet har en gyllene färg.',
+        'Stjälp ut ett bröd i den heta grytan och rista toppen. Grädda 20 minuter med lock vid 250°C, ta bort locket och sänk till 210°C i ytterligare 20 minuter. Den höga hydreringen ger en knaprig, karamelliserad skorpa. Upprepa med det andra brödet om du bara har en gryta.',
       duration: 40,
     },
   ],
+  datePublished: '2025-01-25',
   tips: [
     'Om du älskar frukt och nötter som vi, tillsätt en näve blötlagda hackade valnötter och torkade fikon.',
     'Emmer är ett urgammalt vete med fin nötig smak som passar utmärkt i surdegsbröd.',
     'Virvelmalet mjöl ger en finare struktur än stenmalet.',
     'Ölandsvete eller dinkel ger brödet extra smak och karaktär.',
   ],
-};
+}

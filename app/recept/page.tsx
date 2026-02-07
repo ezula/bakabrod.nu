@@ -1,30 +1,33 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { formatTime, getTotalTime, recipes } from '@/lib/recipes';
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { formatTime, getTotalTime, recipes } from '@/lib/recipes'
 
 export const metadata: Metadata = {
   title: 'Surdegsbröd recept - Enkla recept för hembakning',
   description:
     'Våra bästa surdegsbröd recept med tydliga steg-för-steg instruktioner. Perfekt för nybörjare och erfarna bagare. Baka surdegsbröd i gryta eller på bakstål.',
+  alternates: {
+    canonical: '/recept',
+  },
   openGraph: {
     title: 'Surdegsbröd recept | bakabröd.nu',
     description:
       'Våra bästa surdegsbröd recept med tydliga steg-för-steg instruktioner. Perfekt för nybörjare och erfarna bagare.',
   },
-};
+}
 
 function DifficultyBadge({ difficulty }: { difficulty: string }) {
   const colors = {
     lätt: 'badge-success',
     medel: 'badge-warning',
     avancerad: 'badge-error',
-  };
+  }
   return (
     <span className={`badge ${colors[difficulty as keyof typeof colors]}`}>
       {difficulty}
     </span>
-  );
+  )
 }
 
 export default function RecipesPage() {
@@ -108,5 +111,5 @@ export default function RecipesPage() {
         }}
       />
     </main>
-  );
+  )
 }

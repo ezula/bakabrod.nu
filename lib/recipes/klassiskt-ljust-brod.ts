@@ -1,4 +1,4 @@
-import type { Recipe } from './types';
+import type { Recipe } from './types'
 
 export const klassisktLjustBrod: Recipe = {
   slug: 'klassiskt-ljust-brod',
@@ -25,61 +25,63 @@ export const klassisktLjustBrod: Recipe = {
     {
       title: 'Blanda degen',
       description:
-        'Vispa samman vatten, surdeg, fullkornsmjölet och saltet till en jämn smet. Häll i vetemjölet och blanda ihop med händerna eller en slev tills allt mjöl är blandat. Behöver inte knådas. Täck bunken med ett lock och låt vila i 30 minuter.',
+        'Häll upp vattnet i en stor bunke. Tillsätt surdegen och rör ut den. Blanda i fullkornsmjölet och saltet och vispa till en slät smet. Tillsätt vetemjölet och arbeta ihop med händerna tills allt mjöl är inkorporerat — degen ska vara lite kladdig men utan torra fläckar. Ingen knådning behövs. Täck med lock och låt vila i 30 minuter (autolyse).',
       duration: 35,
     },
     {
-      title: 'Vik 1',
+      title: 'Första vikningen',
       description:
-        'Vik degen från kanterna och in mot mitten. Dra lätt i degen men den ska inte dras sönder. Upprepa hela vägen runt tills degen börjar kännas stum. Låt vila 20-30 minuter.',
+        'Med en våt hand, ta tag i degen vid kanten och dra uppåt och vik in mot mitten. Rotera bunken en kvarts varv och upprepa. Fortsätt runt hela degen (ca 4-6 vikningar). Du kommer märka att degen redan börjar hålla ihop bättre. Låt vila 20-30 minuter under lock.',
       duration: 25,
     },
     {
-      title: 'Vik 2',
+      title: 'Andra vikningen',
       description:
-        'Upprepa samma vikning som ovan. Låt vila ytterligare 20-30 minuter.',
+        'Upprepa vikningarna. Den här gången ska degen kännas slätare och mer elastisk. Den släpper lättare från bunkens kanter. Vila ytterligare 20-30 minuter.',
       duration: 25,
     },
     {
-      title: 'Vik 3',
-      description: 'Gör en sista vikning på samma sätt som tidigare.',
+      title: 'Tredje vikningen',
+      description:
+        'Sista omgången vikningar. Degen bör nu vara märkbart luftigare och hålla sin form bättre. Var försiktig så du inte trycker ut luften.',
       duration: 5,
     },
     {
-      title: 'Jäsning',
+      title: 'Bulkjäsning',
       description:
-        'Låt degen jäsa i rumstemperatur i cirka 4-5 timmar. Degen ska nästan ha fördubblats i storlek.',
+        'Låt degen jäsa i rumstemperatur (ca 22-24°C) i 4-5 timmar. Degen är klar när den har ökat med ungefär 50-75% i volym och ytan ser kupig och bubblig ut.',
       duration: 270,
     },
     {
       title: 'Forma brödet',
       description:
-        'Mjöla en handduk i en jäskorg. Forma degen till en rund boll och låt vila på bänken i 15-20 minuter. Gör en sista formning och lägg i jäskorg med sömmen uppåt.',
+        'Mjöla arbetsytan lätt och stjälp ut degen. Forma till en rund boll genom att vika kanterna in mot mitten och sedan rulla den mot bänken med kupade händer. Låt vila med sömmen nedåt i 15-20 minuter (bänkvila). Forma en sista gång och lägg i en mjölad jäskorg med sömmen uppåt.',
       duration: 25,
     },
     {
       title: 'Kylskåpsjäsning',
       description:
-        'Täck jäskorgen och låt vila i kylen i 12-24 timmar. Den långa, kalla jäsningen utvecklar smaken.',
+        'Täck jäskorgen med plastfolie eller en fuktig handduk. Ställ in i kylen i 12-24 timmar. Den långa kalla jäsningen ger brödet djupare smak och gör det lättare att hantera och rista.',
       duration: 1080,
     },
     {
       title: 'Förbered ugnen',
       description:
-        'Värm upp ugnen ordentligt med bakstål eller gryta till 250 grader. Låt bli riktigt varm i minst 30 minuter.',
+        'Sätt in din gjutjärnsgryta med lock (eller bakstål) i ugnen och värm till 250°C. Låt ugnen vara på i minst 30 minuter efter att den nått temperatur så grytan blir ordentligt genomvarm.',
       duration: 30,
     },
     {
       title: 'Grädda brödet',
       description:
-        'Stjälp ut brödet i grytan eller på bakstålet. Grädda i 20 minuter med lock (eller med ånga), sänk sedan värmen till 210 grader och grädda ytterligare 20 minuter utan lock tills brödet har en gyllene färg.',
+        'Ta ut grytan, stjälp försiktigt ut brödet i den och rista toppen med en vass kniv eller rakblad. Sätt på locket och grädda 20 minuter. Ta sedan bort locket, sänk till 210°C och grädda ytterligare 20 minuter tills skorpan är gyllenbrunt. Brödet ska låta ihåligt när du knackar på undersidan.',
       duration: 40,
     },
   ],
+  datePublished: '2025-01-11',
   tips: [
     'Ett perfekt bröd för nybörjare tack vare sin enkla ingredienslista.',
     'Använd en aktiv surdeg som har fördubblats inom 4-6 timmar efter matning.',
     'Vattentemperaturen påverkar jäsningen - använd kallare vatten på sommaren.',
     'Förvara brödet i en brödpåse för att behålla fuktigheten.',
   ],
-};
+}

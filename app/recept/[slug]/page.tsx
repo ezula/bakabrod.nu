@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import {
   formatTime,
   getAllRecipeSlugs,
@@ -9,25 +9,28 @@ import {
   getRecipeBySlug,
   getTotalTime,
   type Recipe,
-} from '@/lib/recipes';
+} from '@/lib/recipes'
 
 export function generateStaticParams() {
-  return getAllRecipeSlugs().map((slug) => ({ slug }));
+  return getAllRecipeSlugs().map((slug) => ({ slug }))
 }
 
 export function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   return params.then(({ slug }) => {
-    const recipe = getRecipeBySlug(slug);
+    const recipe = getRecipeBySlug(slug)
     if (!recipe) {
-      return { title: 'Recept hittades inte' };
+      return { title: 'Recept hittades inte' }
     }
     return {
       title: recipe.name,
       description: recipe.description,
+      alternates: {
+        canonical: `/recept/${slug}`,
+      },
       openGraph: {
         title: `${recipe.name} | bakabröd.nu`,
         description: recipe.description,
@@ -36,17 +39,17 @@ export function generateMetadata({
           ? [`https://xn--bakabrd-f1a.nu${recipe.image}`]
           : undefined,
       },
-    };
-  });
+    }
+  })
 }
 
 function formatDuration(minutes: number): string {
-  const hours = Math.floor(minutes / 60);
-  const mins = minutes % 60;
-  let result = 'PT';
-  if (hours > 0) result += `${hours}H`;
-  if (mins > 0) result += `${mins}M`;
-  return result || 'PT0M';
+  const hours = Math.floor(minutes / 60)
+  const mins = minutes % 60
+  let result = 'PT'
+  if (hours > 0) result += `${hours}H`
+  if (mins > 0) result += `${mins}M`
+  return result || 'PT0M'
 }
 
 function generateRecipeSchema(recipe: Recipe) {
@@ -63,7 +66,7 @@ function generateRecipeSchema(recipe: Recipe) {
     totalTime: formatDuration(getTotalTime(recipe)),
     recipeYield: recipe.yields,
     recipeIngredient: recipe.ingredients.map(
-      (i) => `${i.amount} ${i.unit} ${i.name}`,
+      (i) => `${i.amount} ${i.unit} ${i.name}`
     ),
     recipeInstructions: recipe.steps.map((step, index) => ({
       '@type': 'HowToStep',
@@ -76,23 +79,23 @@ function generateRecipeSchema(recipe: Recipe) {
       name: 'bakabröd.nu',
       url: 'https://xn--bakabrd-f1a.nu',
     },
-    datePublished: '2025-01-11',
+    datePublished: recipe.datePublished ?? '2025-01-11',
     recipeCategory: 'Bröd',
     recipeCuisine: 'Swedish',
     keywords: 'surdeg, surdegsbröd, bröd, baka',
-  };
+  }
 }
 
 export default async function RecipePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>
 }) {
-  const { slug } = await params;
-  const recipe = getRecipeBySlug(slug);
+  const { slug } = await params
+  const recipe = getRecipeBySlug(slug)
 
   if (!recipe) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -262,5 +265,5 @@ export default async function RecipePage({
         }}
       />
     </main>
-  );
+  )
 }

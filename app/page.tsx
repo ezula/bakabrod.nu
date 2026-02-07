@@ -1,4 +1,11 @@
-import { HomeContent } from '@/components/HomeContent';
+import type { Metadata } from 'next'
+import { HomeContent } from '@/components/HomeContent'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function HomePage() {
   return (
@@ -18,5 +25,5 @@ export default function HomePage() {
       />
       <HomeContent />
     </>
-  );
+  )
 }
